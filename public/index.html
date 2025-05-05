@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Produtos - Loja Virtual</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            font-size: 62.5%;
+            --c-primary: #121321;
+            --c-secondary: #f3f3f3;
+            --c-brand-dark: #FF6D00;
+            --c-brand: #FF8500;
+            --c-brand-light: #FF9E00;
+            --c-accent-dark: #240046;
+            --c-accent: #5A189A;
+            --c-accent-light: #9D4EDD;
+        }
+
+        body {
+            font-size: 1.6rem;
+            font-family: Inter, Arial, Helvetica, sans-serif;
+        }
+
+        #main {
+            margin-top: 6.4rem;
+        }
+
+        #product-list {
+            margin: 0 auto;
+            max-width: 120rem;
+            padding: 0 1.6rem;
+        }
+
+        #product-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 3.2rem;
+        }
+
+        #product-table th,
+        #product-table td {
+            padding: 0.8rem;
+            text-align: start;
+            border: 1px solid #ddd;
+        }
+
+        #product-table th {
+            padding-top: 1.2rem;
+            padding-bottom: 1.2rem;
+            background-color: #04AA6D;
+            color: #fff;
+        }
+
+        #product-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #product-table tbody tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        #product-table tbody tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+
+    <main id="main">
+        <article id="product-list" ng-controller="ProductsController">
+            <h2 class="title">Produtos</h2>
+            <table id="product-table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in products">
+                        <td ng-bind="product.id">1</td>
+                        <td ng-bind="product.name">Produto 1</td>
+                        <td>R$ <span ng-bind="product.price.toLocaleString()">10,00</span></td>
+                        <td ng-bind="product.description">Descrição do produto 1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        window.app = angular.module('app', []);
+    </script>
+
+    <script>
+        window.app.controller('ProductsController', function ($scope) {
+            $scope.products = [
+                {
+                    "id": "1",
+                    "name": "Produto 1",
+                    "price": 9.99,
+                    "description": "Descrição do produto 1"
+                },
+                {
+                    "id": "2",
+                    "name": "Produto 2",
+                    "price": 19.99,
+                    "description": "Descrição do produto 2"
+                },
+                {
+                    "id": "3",
+                    "name": "Produto 3",
+                    "price": 29.99,
+                    "description": "Descrição do produto 3"
+                }
+            ]
+        });
+    </script>
+</body>
+
+</html>
