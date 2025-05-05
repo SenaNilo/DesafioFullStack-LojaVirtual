@@ -5,7 +5,7 @@ const SECRET_KEY = process.env. ACCESS_KEY;
 class AuthController { 
   static async login(req, res) { 
     const { username, password } = req.body; 
- 
+ //fazer um bcrypt
     const user = await prisma.user.findFirst({ 
       where: { username, password } 
     }); 

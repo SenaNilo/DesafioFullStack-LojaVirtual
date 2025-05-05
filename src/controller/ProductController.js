@@ -28,17 +28,22 @@ class ProductController {
         description
       }
     })
+
+    res.json(updatedUser)
   }
 
-  static async deletedUser(id){
+  static async deletedUser(req, res){
+    const { id } = req.params
     const deletedUser = await prisma.user.delete({
       where: {
         id
       }
     })
+
+    res.json(deletedUser)
   }
 
-  static async initDatabase(){
+  static async initDatabase(req, res){
     const ourProducts = await prisma.product.createMany({
       data: [
         {
@@ -93,6 +98,8 @@ class ProductController {
         }
       ]
     })
+
+    res.json(ourProducts)
   }
 
 } 
