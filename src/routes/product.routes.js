@@ -4,8 +4,9 @@ const ProductController = require('../controller/ProductController');
 const verificarToken = require('../middlewares/auth.middleware'); 
  
 router.get('/', ProductController.list); 
-// router.get('/delete/{}', ProductController.delete)
 router.get('/init', ProductController.initDatabase)
+
+router.get('/delete/:id', ProductController.delete)
 
 router.post('/',  verificarToken, ProductController.create); 
  
