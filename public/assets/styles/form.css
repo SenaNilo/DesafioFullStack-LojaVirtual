@@ -1,0 +1,48 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    max-width: 50rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.input-group .label {
+    font-size: 1.4rem;
+}
+
+.input {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    padding: 0.8rem;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1.6rem;
+    margin-top: 0.8rem;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    background: none;
+    border-radius: 0.4rem;
+    padding: 0.8rem 1.6rem;
+    transition: background 0.5s;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #2b5fc0;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #1e4ca3;
+}

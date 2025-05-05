@@ -25,16 +25,19 @@ body {
     margin-top: 6.4rem;
 }
 
-#product-list {
+.container {
     margin: 0 auto;
     max-width: 120rem;
     padding: 0 1.6rem;
 }
 
+.container .title {
+    margin-bottom: 3.2rem;
+}
+
 .table {
     border-collapse: collapse;
     width: 100%;
-    margin-top: 3.2rem;
 }
 
 .table th,
@@ -47,7 +50,7 @@ body {
 .table th {
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
-    background-color: #04AA6D;
+    background-color: #2b5fc0;
     color: #fff;
 }
 
