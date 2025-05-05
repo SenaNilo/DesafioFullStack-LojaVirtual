@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Carrinho - Loja Virtual</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <link rel="stylesheet" href="./assets/styles/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <main id="main">
+        <article id="product-list" ng-controller="CarrinhoController">
+            <h2 class="title">Carrinho</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in carrinho">
+                        <td ng-bind="product.id">1</td>
+                        <td ng-bind="product.name">Produto 1</td>
+                        <td>R$ <span ng-bind="product.price.toLocaleString()">10,00</span></td>
+                        <td ng-bind="product.description">Descrição do produto 1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        window.app = angular.module('app', []);
+    </script>
+
+    <script>
+        window.app.controller('CarrinhoController', function ($scope) {
+            $scope.carrinho = [
+                {
+                    "id": "1",
+                    "name": "Produto 1",
+                    "price": 9.99,
+                    "description": "Descrição do produto 1"
+                },
+                {
+                    "id": "2",
+                    "name": "Produto 2",
+                    "price": 19.99,
+                    "description": "Descrição do produto 2"
+                }
+            ]
+        });
+    </script>
+</body>
+
+</html>
