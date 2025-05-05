@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --c-primary: #121321;
+    --c-secondary: #f3f3f3;
+    --c-brand-dark: #FF6D00;
+    --c-brand: #FF8500;
+    --c-brand-light: #FF9E00;
+    --c-accent-dark: #240046;
+    --c-accent: #5A189A;
+    --c-accent-light: #9D4EDD;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+#main {
+    margin-top: 6.4rem;
+}
+
+#product-list {
+    margin: 0 auto;
+    max-width: 120rem;
+    padding: 0 1.6rem;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 3.2rem;
+}
+
+.table th,
+.table td {
+    padding: 0.8rem;
+    text-align: start;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    background-color: #04AA6D;
+    color: #fff;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.table tbody tr:hover {
+    background-color: #ddd;
+}

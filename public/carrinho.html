@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Produtos - Loja Virtual</title>
+    <title>Carrinho - Loja Virtual</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <link rel="stylesheet" href="./assets/styles/style.css">
@@ -19,8 +19,8 @@
 <body>
 
     <main id="main">
-        <article id="product-list" ng-controller="ProductsController">
-            <h2 class="title">Produtos</h2>
+        <article id="product-list" ng-controller="CarrinhoController">
+            <h2 class="title">Carrinho</h2>
             <table class="table">
                 <thead>
                     <tr>
@@ -31,7 +31,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="product in products">
+                    <tr ng-repeat="product in carrinho">
                         <td ng-bind="product.id">1</td>
                         <td ng-bind="product.name">Produto 1</td>
                         <td>R$ <span ng-bind="product.price.toLocaleString()">10,00</span></td>
@@ -48,8 +48,8 @@
     </script>
 
     <script>
-        window.app.controller('ProductsController', function ($scope) {
-            $scope.products = [
+        window.app.controller('CarrinhoController', function ($scope) {
+            $scope.carrinho = [
                 {
                     "id": "1",
                     "name": "Produto 1",
@@ -61,12 +61,6 @@
                     "name": "Produto 2",
                     "price": 19.99,
                     "description": "Descrição do produto 2"
-                },
-                {
-                    "id": "3",
-                    "name": "Produto 3",
-                    "price": 29.99,
-                    "description": "Descrição do produto 3"
                 }
             ]
         });
