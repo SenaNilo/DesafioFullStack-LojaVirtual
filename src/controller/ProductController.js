@@ -2,6 +2,7 @@ const prisma = require('../models/PrismaService');
  
 class ProductController { 
   static async list(req, res) { 
+    console.log("aq foi")
     const products = await prisma.product.findMany(); 
     res.json(products); 
   } 
@@ -16,5 +17,5 @@ class ProductController {
     res.json(product); 
   } 
 } 
- 
+
 module.exports = ProductController;
