@@ -30,7 +30,6 @@ class AuthController {
       res.status(500).json({ error: "Erro ao fazer login" });
     }
     
-    return
   } 
 
   static async getUsers(req, res){

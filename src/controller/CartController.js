@@ -41,7 +41,7 @@ class CartController {
                         id: existingItem.id 
                     },
                     data: { 
-                        quantity: existingItem + quantity
+                        quantity: existingItem.quantity + quantity
                     }
                 });
     
