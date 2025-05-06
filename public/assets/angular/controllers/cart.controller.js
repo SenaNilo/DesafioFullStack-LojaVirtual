@@ -8,5 +8,10 @@ window.app.controller('CartController', function ($scope, ProductsService) {
         $scope.$apply();
     }
 
+    $scope.remove = async (product) => {
+        await ProductsService.removeFromCart(product);
+        $scope.$apply();
+    }
+
     loadCart();
 });
