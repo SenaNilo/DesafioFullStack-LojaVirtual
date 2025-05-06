@@ -2,7 +2,7 @@ const prisma = require("../src/models/PrismaService");
 
 async function clearDatabase() {
   try {
-    // Deleta em ordem para respeitar chaves estrangeiras
+    
     await prisma.cartItem.deleteMany({});
     await prisma.product.deleteMany({});
     await prisma.user.deleteMany({});
