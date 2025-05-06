@@ -24,12 +24,12 @@
             <form id="user-form" class="form form-validate" ng-submit="send()">
                 <div class="input-group">
                     <label class="label" for="user-name">Nome</label>
-                    <input ng-bind="user.username" ng-required="true" id="user-name" class="input" type="text"
+                    <input ng-model="user.username" ng-required="true" id="user-name" class="input" type="text"
                         placeholder="Nome de usuário">
                 </div>
                 <div class="input-group">
                     <label class="label" for="user-password">Senha</label>
-                    <input ng-bind="user.password" ng-required="true" id="user-password" class="input" type="password"
+                    <input ng-model="user.password" ng-required="true" id="user-password" class="input" type="password"
                         placeholder="********">
                 </div>
                 <div class="btn-group">

@@ -38,7 +38,8 @@
                         <td class="product-name" ng-bind="product.name">Produto 1</td>
                         <td class="product-price">R$ <span ng-bind="product.price.toLocaleString()">10,00</span></td>
                         <td class="product-description" ng-bind="product.description">Descrição do produto 1</td>
-                        <td class="product-addToCart"><button class="btn">Adicionar ao carrinho</button></td>
+                        <td class="product-addToCart"><button class="btn" ng-click="addToCart(product)">Adicionar ao
+                                carrinho</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -47,8 +48,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="./assets/angular/script.js"></script>
-    <script src="./assets/angular/services/carrinho.service.js"></script>
+    <script src="./assets/angular/services/products.service.js"></script>
     <script src="./assets/angular/controllers/products.controller.js"></script>
+    <script src="./assets/angular/controllers/carrinho.controller.js"></script>
 </body>
 
 </html>

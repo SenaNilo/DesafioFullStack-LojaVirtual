@@ -1,11 +1,15 @@
 // @ts-nocheck
 
-window.app.controller('ProductsController', function ($scope, CarrinhoService) {
-    $scope.products = CarrinhoService.getAll();
+window.app.controller('ProductsController', function ($scope, ProductsService) {
+    $scope.products = [];
 
     async function fetchProducts() {
-        const response = await fetch('./products');
-        $scope.products = await response.json();
+        $scope.products = await ProductsService.getAll();
+        $scope.$apply();
+    }
+
+    $scope.addToCart = async function addToCart(product) {
+        await ProductsService.addToCart(product)
         $scope.$apply();
     }
 

@@ -29,6 +29,7 @@
                         <th>Nome</th>
                         <th>Preço</th>
                         <th>Descrição</th>
+                        <th>Quantidade</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,6 +38,7 @@
                         <td ng-bind="product.name">Produto 1</td>
                         <td>R$ <span ng-bind="product.price.toLocaleString()">10,00</span></td>
                         <td ng-bind="product.description">Descrição do produto 1</td>
+                        <td ng-bind="product.quantity">0</td>
                     </tr>
                 </tbody>
             </table>
@@ -45,7 +47,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="./assets/angular/script.js"></script>
-    <script src="./assets/angular/services/carrinho.service.js"></script>
+    <script src="./assets/angular/services/products.service.js"></script>
     <script src="./assets/angular/controllers/carrinho.controller.js"></script>
 </body>
 
