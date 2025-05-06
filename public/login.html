@@ -19,16 +19,18 @@
 
 <body>
     <main id="main">
-        <article class="container">
+        <article class="container" ng-controller="AuthController">
             <h2 class="title">Login</h2>
-            <form id="user-form" class="form form-validate">
+            <form id="user-form" class="form form-validate" ng-submit="send()">
                 <div class="input-group">
-                    <label class="label" for="user-email">Email</label>
-                    <input id="user-email" class="input" type="email" placeholder="user@domain.com">
+                    <label class="label" for="user-name">Nome</label>
+                    <input ng-bind="user.username" ng-required="true" id="user-name" class="input" type="text"
+                        placeholder="Nome de usuário">
                 </div>
                 <div class="input-group">
                     <label class="label" for="user-password">Senha</label>
-                    <input id="user-password" class="input" type="password" placeholder="********">
+                    <input ng-bind="user.password" ng-required="true" id="user-password" class="input" type="password"
+                        placeholder="********">
                 </div>
                 <div class="btn-group">
                     <button class="btn btn-primary btn-send" type="submit">Enviar</button>
@@ -38,9 +40,8 @@
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script>
-        window.app = angular.module('app', []);
-    </script>
+    <script src="./assets/angular/script.js"></script>
+    <script src="./assets/angular/controllers/auth.controller.js"></script>
 </body>
 
 </html>

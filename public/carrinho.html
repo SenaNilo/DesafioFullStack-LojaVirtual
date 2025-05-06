@@ -44,28 +44,9 @@
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script>
-        window.app = angular.module('app', []);
-    </script>
-
-    <script>
-        window.app.controller('CarrinhoController', function ($scope) {
-            $scope.carrinho = [
-                {
-                    "id": "1",
-                    "name": "Produto 1",
-                    "price": 9.99,
-                    "description": "Descrição do produto 1"
-                },
-                {
-                    "id": "2",
-                    "name": "Produto 2",
-                    "price": 19.99,
-                    "description": "Descrição do produto 2"
-                }
-            ]
-        });
-    </script>
+    <script src="./assets/angular/script.js"></script>
+    <script src="./assets/angular/services/carrinho.service.js"></script>
+    <script src="./assets/angular/controllers/carrinho.controller.js"></script>
 </body>
 
 </html>
