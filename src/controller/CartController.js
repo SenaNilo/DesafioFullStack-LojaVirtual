@@ -1,11 +1,11 @@
-const prisma = require('../models/PrismaService'); 
+const prisma = require('../models/PrismaService');
 
 class CartController {
 
-    static async addProduct(req,res) {
+    static async addProduct(req, res) {
         const { username, productId, quantity } = req.body;
 
-        try{
+        try {
             // Verificar o usuario
             const user = await prisma.user.findFirst({
                 where: {
@@ -13,8 +13,8 @@ class CartController {
                 }
             })
 
-            if (!user){
-                return res.status(404).json({error: 'Usuário não encontrado' })
+            if (!user) {
+                return res.status(404).json({ error: 'Usuário não encontrado' })
             }
 
             // Verifica se o produto existe
@@ -37,15 +37,15 @@ class CartController {
             if (existingItem) {
                 // attualiza a quantidade
                 const updatedItem = await prisma.cartItem.update({
-                    where: { 
-                        id: existingItem.id 
+                    where: {
+                        id: existingItem.id
                     },
-                    data: { 
+                    data: {
                         quantity: existingItem.quantity + quantity
                     }
                 });
-    
-                res.json({ message: 'Quantidade atualizada no carrinho', item: updatedItem });
+
+                return res.json({ message: 'Quantidade atualizada no carrinho', item: updatedItem });
             }
 
             // Colocar um novo item no carringo (cartItem)
@@ -57,15 +57,13 @@ class CartController {
                 }
             });
 
-            res.json(newItem)
+            return res.json(newItem)
 
-        }catch(error){
+        } catch (error) {
             console.error(error);
             res.status(500).json({ error: 'Erro ao adicionar produto ao carrinho' });
         }
-
-        return
-
+        return;
     }
 
     static async viewCart(req, res) {
@@ -76,8 +74,8 @@ class CartController {
                 username
             }
         })
-        if (!user){
-            return res.status(404).json({error: 'Usuário não encontrado' })
+        if (!user) {
+            return res.status(404).json({ error: 'Usuário não encontrado' })
         }
 
         const products = await prisma.cartItem.findMany({
@@ -100,20 +98,20 @@ class CartController {
         })
 
         res.json(products)
-    }   
+    }
 
-    static async deleteProduct(req, res){
+    static async deleteProduct(req, res) {
         // Deletar o produto do carrinho
         const { id } = req.params
 
         const deleteProduct = await prisma.cartItem.delete({
-          where: {
-            productId: parseInt(id)
-          }
+            where: {
+                productId: parseInt(id)
+            }
         })
-    
+
         res.json(deleteProduct)
-      }
+    }
 }
 
 module.exports = CartController;
