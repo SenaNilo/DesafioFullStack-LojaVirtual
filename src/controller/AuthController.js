@@ -37,6 +37,21 @@ class AuthController {
     return res.json(users);
   }
 
+  static async initDatabase(req, res){
+    const bcrypt = require('bcrypt');
+    const salt = bcrypt.genSaltSync(8);
+    const hash = bcrypt.hashSync("senha123", salt);
+
+    const adminUser = await prisma.user.create({
+      data: {
+        username: 'Danilo e Gabriel',
+        password: hash
+      }
+    })
+
+    res.json(adminUser)
+  }
+
   // static async cadastro(req, res){
 
   // }

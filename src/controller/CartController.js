@@ -1,6 +1,7 @@
 const prisma = require('../models/PrismaService'); 
 
 class CartController {
+
     static async addProduct(req,res) {
         const { username, productId, quantity } = req.body;
 
@@ -44,7 +45,7 @@ class CartController {
                     }
                 });
     
-                return res.json({ message: 'Quantidade atualizada no carrinho', item: updatedItem });
+                res.json({ message: 'Quantidade atualizada no carrinho', item: updatedItem });
             }
 
             // Colocar um novo item no carringo (cartItem)
@@ -79,7 +80,7 @@ class CartController {
             return res.status(404).json({error: 'Usuário não encontrado' })
         }
 
-        const product = await prisma.cartItem.findMany({
+        const products = await prisma.cartItem.findMany({
             where: {
                 userId: user.id
             },
@@ -90,12 +91,13 @@ class CartController {
             }
         })
 
-        res.json(product)
+        res.json(products)
     }   
 
     static async deleteProduct(req, res){
         // Deletar o produto do carrinho
         const { id } = req.params
+        
         const deleteProduct = await prisma.cartItem.delete({
           where: {
             productId: id
@@ -105,3 +107,5 @@ class CartController {
         res.json(deleteProduct)
       }
 }
+
+module.exports = CartController;
