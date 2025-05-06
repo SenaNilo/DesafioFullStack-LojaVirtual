@@ -88,6 +88,14 @@ class CartController {
                 id: true,
                 quantity: true,
                 productId: true,
+                userId: true,
+                produto: { // Mnadar produto front
+                    select: {
+                        name: true,
+                        price: true,
+                        description: true,
+                    }
+                }
             }
         })
 
