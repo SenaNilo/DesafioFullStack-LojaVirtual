@@ -20,7 +20,7 @@
 <body>
 
     <main id="main">
-        <article class="container" ng-controller="CarrinhoController">
+        <article class="container" ng-controller="CartController">
             <h2 class="title">Carrinho</h2>
             <table class="table">
                 <thead>
@@ -33,7 +33,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="product in carrinho">
+                    <tr ng-repeat="product in cart">
                         <td ng-bind="product.id">1</td>
                         <td ng-bind="product.name">Produto 1</td>
                         <td>R$ <span ng-bind="product.price.toLocaleString()">10,00</span></td>
@@ -48,7 +48,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="./assets/angular/script.js"></script>
     <script src="./assets/angular/services/products.service.js"></script>
-    <script src="./assets/angular/controllers/carrinho.controller.js"></script>
+    <script src="./assets/angular/controllers/cart.controller.js"></script>
 </body>
 
 </html>
