@@ -34,3 +34,23 @@ body {
 .container .title {
     margin-bottom: 3.2rem;
 }
+
+.btn {
+    outline: none;
+    border: none;
+    background: none;
+    border-radius: 0.4rem;
+    padding: 0.8rem 1.6rem;
+    transition: background 0.5s;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #2b5fc0;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #1e4ca3;
+}
