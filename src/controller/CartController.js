@@ -68,7 +68,7 @@ class CartController {
 
     }
 
-    static async viewAllProducts(req, res) {
+    static async viewCart(req, res) {
         const { username } = req.body;
 
         const user = await prisma.user.findFirst({
@@ -97,10 +97,10 @@ class CartController {
     static async deleteProduct(req, res){
         // Deletar o produto do carrinho
         const { id } = req.params
-        
+
         const deleteProduct = await prisma.cartItem.delete({
           where: {
-            productId: id
+            productId: parseInt(id)
           }
         })
     

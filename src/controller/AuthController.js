@@ -1,7 +1,8 @@
 const prisma = require('../models/PrismaService'); 
 const jwt = require('jsonwebtoken'); 
 const SECRET_KEY = process.env. ACCESS_KEY; 
- 
+const bcrypt = require('bcrypt');
+
 class AuthController { 
 
   static async login(req, res) { 
@@ -38,23 +39,52 @@ class AuthController {
   }
 
   static async initDatabase(req, res){
-    const bcrypt = require('bcrypt');
-    const salt = bcrypt.genSaltSync(8);
-    const hash = bcrypt.hashSync("senha123", salt);
+    // FAZER O INIT NO SEED 
 
-    const adminUser = await prisma.user.create({
-      data: {
-        username: 'Danilo e Gabriel',
-        password: hash
-      }
-    })
+    // const salt = bcrypt.genSaltSync(8);
+    // const hash = bcrypt.hashSync("senha123", salt);
 
-    res.json(adminUser)
+    // const adminUser = await prisma.user.create({
+    //   data: {
+    //     username: 'Danilo e Gabriel',
+    //     password: hash
+    //   }
+    // })
+
+    // res.json(adminUser)
   }
 
   // static async cadastro(req, res){
 
   // }
+
+  // Para CRUD em User
+  // static async updateUser(req, res){
+  //   const { name, price, description } = req.body; 
+  //   const updatedUser = await prisma.user.update({
+  //     where: {
+  //       id
+  //     },
+  //     data: {
+  //       name,
+  //       price: parseFloat(price), 
+  //       description
+  //     }
+  //   })
+
+  //   res.json(updatedUser)
+  // }
+
+  static async deleteUser(req, res){
+    const { id } = req.params
+    const deleteUser = await prisma.user.delete({
+      where: {
+        id: parseInt(id)
+      }
+    })
+
+    res.json(deleteUser)
+  }
 } 
  
 module.exports = AuthController; 

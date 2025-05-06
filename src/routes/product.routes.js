@@ -4,9 +4,13 @@ const ProductController = require('../controller/ProductController');
 const verificarToken = require('../middlewares/auth.middleware'); 
  
 router.get('/', ProductController.list); 
-router.post('/init', ProductController.initDatabase)
+
+// Init na Seed!
+// router.post('/init', ProductController.initDatabase)
+
+
 // Delete como user mudar!!
-//  router.delete('/delete/:id', ProductController.delete)
+router.delete('/delete/:id', ProductController.deleteProduct)
 
 
 router.post('/',  verificarToken, ProductController.create); 
