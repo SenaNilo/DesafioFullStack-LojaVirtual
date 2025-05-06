@@ -1,6 +1,7 @@
 // @ts-nocheck
 
 window.app.service('ProductsService', function ($http) {
+    let username = 'Danilo e Gabriel';
     let products = [];
     let cart = [];
 
@@ -11,33 +12,31 @@ window.app.service('ProductsService', function ($http) {
     }
 
     async function addToCart(product) {
-        console.log(product)
-        const response = await fetch('./cart/add', {
+        await fetch('./cart/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ username: 'Danilo e Gabriel', productId: product.id, quantity: 1 })
-        }).then((v) => {
-            console.log('Aeee')
-            console.log(v)
-        }, (e) => {
-            console.log('Erro...')
-            console.error(e)
+            body: JSON.stringify({ username, productId: product.id, quantity: 1 })
         });
-        console.log(response)
     }
 
     async function getCartItems() {
         const response = await fetch('./cart/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username: 'Danilo e Gabriel' })
+            body: JSON.stringify({ username })
         });
         const data = await response.json();
-        console.log(data)
-        const products = data.map(v => { return { id: v.productId, name: v.produto.name, price: v.produto.price, description: v.produto.description, quantity: v.quantity } });
-        console.log(products)
+        const products = data.map(({ productId, produto, quantity }) => {
+            return {
+                id: productId,
+                name: produto.name,
+                price: produto.price,
+                description: produto.description,
+                quantity: quantity
+            }
+        });
         return products;
     }
 
