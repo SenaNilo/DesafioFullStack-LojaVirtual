@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Login - Loja Virtual</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/form.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main id="main">
+        <article class="container">
+            <h2 class="title">Login</h2>
+            <form id="user-form" class="form form-validate">
+                <div class="input-group">
+                    <label class="label" for="user-email">Email</label>
+                    <input id="user-email" class="input" type="email" placeholder="user@domain.com">
+                </div>
+                <div class="input-group">
+                    <label class="label" for="user-password">Senha</label>
+                    <input id="user-password" class="input" type="password" placeholder="********">
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-primary btn-send" type="submit">Enviar</button>
+                </div>
+            </form>
+        </article>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        window.app = angular.module('app', []);
+    </script>
+</body>
+
+</html>
