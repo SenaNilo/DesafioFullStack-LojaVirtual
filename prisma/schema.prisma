@@ -18,6 +18,8 @@ model User {
   id       Int    @id @default(autoincrement()) 
   username String @unique 
   password String 
+
+  CartItem CartItem[]
 }
 
 model Product { 
@@ -25,10 +27,18 @@ model Product {
   name        String 
   price       Float 
   description String 
+
+  CartItem CartItem[]
 }
 
 model CartItem { 
   id        Int     @id @default(autoincrement()) 
-  productId Int //relacionar com os produtos, acredito que devera se relacionar com os users tambem
   quantity  Int 
+
+  //relacionar com os produtos, acredito que devera se relacionar com os users tambem
+  productId Int 
+  produto   Product @relation(fields: [productId], references: [id])
+
+  userId    Int     
+  usuario   User    @relation(fields: [userId], references: [id])
 }
