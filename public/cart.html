@@ -20,25 +20,27 @@
 <body>
 
     <main id="main">
-        <article class="container" ng-controller="CarrinhoController">
+        <article class="container" ng-controller="CartController">
             <h2 class="title">Carrinho</h2>
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Nome</th>
-                        <th>Preço</th>
-                        <th>Descrição</th>
+                        <th class="product-id">Id</th>
+                        <th class="product-name">Nome</th>
+                        <th class="product-price">Preço</th>
+                        <th class="product-description">Descrição</th>
                         <th>Quantidade</th>
+                        <th>#</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="product in carrinho">
-                        <td ng-bind="product.id">1</td>
-                        <td ng-bind="product.name">Produto 1</td>
-                        <td>R$ <span ng-bind="product.price.toLocaleString()">10,00</span></td>
-                        <td ng-bind="product.description">Descrição do produto 1</td>
+                    <tr ng-repeat="product in cart">
+                        <td class="product-id" ng-bind="product.id">1</td>
+                        <td class="product-name" ng-bind="product.name">Produto 1</td>
+                        <td class="product-price">R$ <span ng-bind="product.price.toLocaleString()">10,00</span></td>
+                        <td class="product-description" ng-bind="product.description">Descrição do produto 1</td>
                         <td ng-bind="product.quantity">0</td>
+                        <td><button class="btn" type="button" ng-click="remove(product)">Remover</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -48,7 +50,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="./assets/angular/script.js"></script>
     <script src="./assets/angular/services/products.service.js"></script>
-    <script src="./assets/angular/controllers/carrinho.controller.js"></script>
+    <script src="./assets/angular/controllers/cart.controller.js"></script>
 </body>
 
 </html>
