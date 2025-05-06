@@ -5,7 +5,8 @@ const verificarToken = require('../middlewares/auth.middleware');
  
 router.get('/', ProductController.list); 
 router.post('/init', ProductController.initDatabase)
-router.delete('/delete/:id', ProductController.delete)
+// Delete como user mudar!!
+//  router.delete('/delete/:id', ProductController.delete)
 
 
 router.post('/',  verificarToken, ProductController.create); 
