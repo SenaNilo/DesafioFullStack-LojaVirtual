@@ -41,16 +41,19 @@
                     <ul>
                         <li><a href="./index.html">Home</a></li>
                         <li><a href="./cardapio.html">Cardápio</a></li>
+                        <li><a href="./create-product.html">Novo Produto</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="actions">
-                <a class="active" href="#">
+                <a href="#" class="active">
                     <span class="material-symbols-outlined">shopping_cart</span>
                 </a>
-                <div class="user-profile">
-                    <span class="material-symbols-outlined">person</span>
-                </div>
+                <a href="./login.html">
+                    <div class="user-profile">
+                        <span class="material-symbols-outlined">person</span>
+                    </div>
+                </a>
             </div>
         </div>
     </header>
@@ -92,9 +95,11 @@
                 
                 <div class="config-product">
                     <div class="quantity">
-                        <button class="qtd-modifier">+</button>
+                        <button ng-click="updateQuantity(product, 1)" class="qtd-modifier">+</button>
+
                         <span ng-bind="product.quantity">0</span>
-                        <button class="qtd-modifier">-</button>
+
+                        <button ng-click="updateQuantity(product, -1)" class="qtd-modifier">-</button>
                     </div>
 
                     <span ng-click="remove(product)" class="delete material-symbols-outlined">delete</span>

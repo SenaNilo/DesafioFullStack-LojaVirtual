@@ -1,6 +1,6 @@
 const prisma = require('../models/PrismaService'); 
 const jwt = require('jsonwebtoken'); 
-const SECRET_KEY = process.env. ACCESS_KEY; 
+const SECRET_KEY = process.env.ACCESS_KEY; 
 const bcrypt = require('bcrypt');
 
 class AuthController { 

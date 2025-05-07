@@ -51,6 +51,22 @@ window.app.service('ProductsService', function ($http) {
         const response = await fetch(url, { method });
     }
 
+    async function updateQuantity(productId, userId, newQuantity) {
+        const response = await fetch(`http://localhost:3000/cart/update/${productId}/${userId}`, {
+            method: 'PUT',  // ou PATCH, dependendo da sua escolha
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ quantity: newQuantity })
+        });
+    
+        const data = await response.json();
+        if (!response.ok) {
+            alert('Erro ao atualizar a quantidade.');
+        }
+        return data;
+    }
+
     function setProduct(prod) {
         localStorage.setItem('selectedProduct', JSON.stringify(prod));
     }
@@ -66,6 +82,7 @@ window.app.service('ProductsService', function ($http) {
         setProduct: (product) => setProduct(product),
         addToCart: (productId, username) => addToCart(productId, username),
         getCartItems: (user) => getCartItems(user),
-        removeFromCart: (productId, userId) => removeFromCart(productId, userId)
+        removeFromCart: (productId, userId) => removeFromCart(productId, userId),
+        updateQuantity: (productId, userId, newQuantity) => updateQuantity(productId, userId, newQuantity)
     }
 });

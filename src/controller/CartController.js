@@ -117,6 +117,38 @@ class CartController {
             res.status(500).json({ error: "Erro ao deletar produto do carrinho" });
         }
     }
+
+    static async updateQuantity(req, res) {
+        const { productId, userId } = req.params;
+        const { quantity } = req.body;
+
+        try {
+            const cartItem = await prisma.cartItem.findFirst({
+                where: {
+                    productId: parseInt(productId),
+                    userId: parseInt(userId)
+                }
+            });
+
+            const updatedItem = await prisma.cartItem.update({
+                where: {
+                    id: cartItem.id 
+                },
+                data: {
+                    quantity: parseInt(quantity) 
+                }
+            });
+
+            if (updatedItem[0] === 0) {
+                return res.status(404).json({ message: 'Produto não encontrado no carrinho.' });
+            }
+
+            res.json({ message: 'Quantidade atualizada com sucesso.' });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ message: 'Erro ao atualizar a quantidade.' });
+        }
+    }
 }
 
 module.exports = CartController;

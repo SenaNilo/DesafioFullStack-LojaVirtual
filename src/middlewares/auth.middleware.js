@@ -3,6 +3,7 @@ const SECRET_KEY = process.env.ACCESS_KEY;
 
 function verificarToken(req, res, next) {
     const authHeader = req.headers.authorization;
+    
     if (!authHeader) return res.status(401).json({ message: 'Token não enviado' });
 
     const token = authHeader.split(' ')[1];
