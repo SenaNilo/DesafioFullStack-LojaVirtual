@@ -7,13 +7,13 @@ header{
 #main {
     display: flex;
     flex-direction: row;
-    align-items: stretch;
+    /* align-items: stretch; */
     min-height: 100vh;
     margin: 0
 }
 
 #main aside.img-product {
-    background: url('../img/item.jpg');
+    background: url('../img/image.png');
     background-size: cover;
     width: 40%;
     /* height: 100%; */
