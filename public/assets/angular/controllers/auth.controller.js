@@ -29,12 +29,16 @@ window.app.controller('AuthController', function ($scope, $http) {
 
           if (data.token) {
             alert('Login bem-sucedido!');
-            // FAZER UM REDIRECT PARA OUTRA PAGINA AQUI
+
             // Salvar o token
             localStorage.setItem('token', data.token);
+
+            window.location.href = "../../index.html"
           } else {
             alert('Erro ao fazer login!');
-            // REINICIAR OS DADOS NOS INPUTS
+            $scope.user.username = ""
+            $scope.user.password = ""
+            $scope.$apply()
           }
     }
 
