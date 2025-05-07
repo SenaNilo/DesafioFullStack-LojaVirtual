@@ -3,7 +3,6 @@
 window.app.service('ProductsService', function ($http) {
     let products = [];
     let cart = [];
-    let productId = 0;
 
     async function fetchProducts() {
         const url = './products';
@@ -52,12 +51,19 @@ window.app.service('ProductsService', function ($http) {
         const response = await fetch(url, { method });
     }
 
-    function setProduct() {
+    function setProduct(prod) {
+        localStorage.setItem('selectedProduct', JSON.stringify(prod));
+    }
 
+    function getProduct() {
+        const prod = localStorage.getItem('selectedProduct');
+        return prod ? JSON.parse(prod) : {};
     }
 
     return {
         getAll: () => fetchProducts(),
+        getProduct: () => getProduct(),
+        setProduct: (product) => setProduct(product),
         addToCart: (productId, username) => addToCart(productId, username),
         getCartItems: (user) => getCartItems(user),
         removeFromCart: (productId, userId) => removeFromCart(productId, userId)

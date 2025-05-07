@@ -63,16 +63,15 @@
                     <span class="material-symbols-outlined">tune</span>
                 </div>
                 <div class="search-bar">
-                    <span class="material-symbols-outlined">search</span>
-                    <input ng-model="search" type="search" placeholder="Pesquisar...">
+                    <label class="material-symbols-outlined" for="search-input">search</label>
+                    <input ng-model="search" id="search-input" type="search" placeholder="Pesquisar...">
                 </div>
             </div>
             <div class="dish-list">
-                <div class="dish-item" ng-repeat="dish in products | filter:search">
+                <div class="dish-item" ng-repeat="dish in products | filter:search" ng-click="redirectToProduct(dish)">
                     <p class="dish-name" ng-bind="dish.name">Nome</p>
                     <p class="dish-description" ng-bind="dish.description">Descrição</p>
-                    <p class="dish-price"><span class="currency" ng-bind="localCurrency">R$</span><span class="price"
-                            ng-bind="dish.price.toLocaleString()">0,00</span></p>
+                    <p class="dish-price"><span class="price" ng-bind="dish.price | currency">0,00</span></p>
                 </div>
             </div>
             <!-- <table>
