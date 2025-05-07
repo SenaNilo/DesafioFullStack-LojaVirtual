@@ -2,7 +2,8 @@
 
 window.app.controller('ProductsController', function ($scope, ProductsService, AuthService) {
     $scope.products = [];
-    $scope.localCurrency = 'R$'
+    $scope.localCurrency = 'R$';
+    $scope.search = '';
 
     $scope.addToCart = async (product) => {
         const user = await AuthService.getUser();
