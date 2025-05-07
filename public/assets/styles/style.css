@@ -1,3 +1,5 @@
+@import url('./card.css');
+
 * {
     margin: 0;
     padding: 0;
@@ -21,12 +23,50 @@ body {
     font-family: Kanit, Arial, Helvetica, sans-serif;
     background: #0B090B;
     color: #f3f3f3;
+    overflow-x: hidden;
 }
 
 .hero {
     width: 100%;
     height: 88rem;
     padding: 1.6rem;
+    position: relative;
+}
+
+.about-us .redirect {
+    margin-top: 3.2rem;
+}
+
+.redirect {
+    outline: none;
+    border: none;
+    background: none;
+    text-decoration: none;
+    color: #f3f3f3;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border-radius: 0.4rem;
+    padding: 0.8rem 1.6rem;
+    transition: 0.5s ease-in-out;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.redirect span {
+    font-size: 2rem;
+    user-select: none;
+}
+
+.redirect-primary {
+    background: #E59627;
+    color: #0B090B;
+}
+
+.redirect-secondary {
+    background: #2D2A2F;
+    color: #f3f3f3;
 }
 
 .hero::before {
@@ -85,6 +125,10 @@ body {
     margin: 12.8rem 0;
 }
 
+.main {
+    margin-bottom: 12.8rem;
+}
+
 .container {
     margin: 0 auto;
     max-width: 120rem;
@@ -93,6 +137,50 @@ body {
 
 .container .title {
     margin-bottom: 3.2rem;
+}
+
+.about-us {
+    margin-top: 6.4rem;
+}
+
+.about-us .container {
+    display: flex;
+    gap: 9.6rem;
+}
+
+.about-us .content {
+    width: 100%;
+    margin: 6.4rem 0;
+}
+
+.about-us .img {
+    width: 100%;
+    max-width: 53.6rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    user-select: none;
+}
+
+.about-us .title,
+.tools .title {
+    margin-bottom: 1.6rem;
+    font-family: Parisienne, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 6.4rem;
+}
+
+.tools {
+    margin-top: 6.4rem;
+}
+
+.tools .title {
+    text-align: center;
+    margin-bottom: 6.4rem;
+}
+
+.about-us p {
+    font-size: 1.6rem;
+    line-height: 150%;
 }
 
 .custom-title {

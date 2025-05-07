@@ -67,6 +67,12 @@
                     <input ng-model="search" id="search-input" type="search" placeholder="Pesquisar...">
                 </div>
             </div>
+            <div class="dish-actions">
+                <a class="redirect redirect-primary" href="./create-product.html">
+                    Cadastrar
+                    <span class="material-symbols-outlined">north_east</span>
+                </a>
+            </div>
             <div class="dish-list">
                 <div class="dish-item" ng-repeat="dish in products | filter:search" ng-click="redirectToProduct(dish)">
                     <p class="dish-name" ng-bind="dish.name">Nome</p>
@@ -74,27 +80,6 @@
                     <p class="dish-price"><span class="price" ng-bind="dish.price | currency">0,00</span></p>
                 </div>
             </div>
-            <!-- <table>
-                <thead>
-                    <tr>
-                        <th class="product-id">Id</th>
-                        <th class="product-name">Nome</th>
-                        <th class="product-price">Preço</th>
-                        <th class="product-description">Descrição</th>
-                        <th class="product-addToCart">#</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="product-row" ng-repeat="product in products">
-                        <td class="product-id" ng-bind="product.id">1</td>
-                        <td class="product-name" ng-bind="product.name">Produto 1</td>
-                        <td class="product-price">R$ <span ng-bind="product.price.toLocaleString()">10,00</span></td>
-                        <td class="product-description" ng-bind="product.description">Descrição do produto 1</td>
-                        <td class="product-addToCart"><button class="btn" ng-click="addToCart(product)">Adicionar ao
-                                carrinho</button></td>
-                    </tr>
-                </tbody>
-            </table> -->
         </article>
     </main>
 

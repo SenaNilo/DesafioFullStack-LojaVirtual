@@ -26,15 +26,15 @@ window.app.controller('ItemController', function ($scope, AuthService, ProductsS
         let price = $scope.item.price
         let description = $scope.item.description
 
-        try{
+        try {
             const response = await fetch('http://localhost:3000/products/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    name, 
-                    price, 
+                    name,
+                    price,
                     description
                 })
             })
@@ -45,7 +45,8 @@ window.app.controller('ItemController', function ($scope, AuthService, ProductsS
             $scope.item.description = ""
 
             $scope.$apply()
-        }catch(error){
+            window.location.href = "./cardapio.html";
+        } catch (error) {
             alert("Produto não Cadastrado!")
             console.log(error)
         }
