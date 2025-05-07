@@ -53,9 +53,8 @@ body {
     gap: 0.8rem;
     border-radius: 0.4rem;
     padding: 0.8rem 1.6rem;
-    transition: 0.5s ease-in-out;
+    transition: 0.2s ease-in-out;
     font-weight: 600;
-    cursor: pointer;
 }
 
 .redirect span {
@@ -68,8 +67,18 @@ body {
     color: #0B090B;
 }
 
+.redirect-primary:hover {
+    background: #f7af4a;
+    color: #0B090B;
+}
+
 .redirect-secondary {
     background: #2D2A2F;
+    color: #f3f3f3;
+}
+
+.redirect-secondary:hover {
+    background: #403c42;
     color: #f3f3f3;
 }
 
@@ -212,6 +221,11 @@ body {
     color: #0B090B;
     font-weight: 600;
     font-size: 2rem;
+}
+
+.btn-primary:hover {
+    background: #f7af4a;
+    color: #0B090B;
 }
 
 /* Buttons */
