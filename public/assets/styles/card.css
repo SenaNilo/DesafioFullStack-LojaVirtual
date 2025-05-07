@@ -5,6 +5,7 @@
     overflow-x: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    list-style: none;
 }
 
 .tools-list::-webkit-scrollbar {
@@ -27,6 +28,7 @@
 .card .img {
     width: 100%;
     height: 100%;
+    user-select: none;
 }
 
 .card .card-details {

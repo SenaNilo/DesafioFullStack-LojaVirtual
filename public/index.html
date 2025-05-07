@@ -31,7 +31,7 @@
     </style>
 </head>
 
-<body>
+<body ng-controller="MainController">
 
     <header id="header">
         <div class="container">
@@ -78,33 +78,32 @@
                         <span class="material-symbols-outlined">north_east</span>
                     </a>
                 </div>
-                <img class="img" src="./assets/img/pancake.png" alt="">
+                <img class="img" src="./assets/img/pancake.png">
             </div>
         </article>
         <article class="tools">
             <div class="container">
                 <h2 class="title">Ferramentas</h2>
-                <div class="tools-list">
-                    <div class="card">
-                        <img class="img" src="./assets/img/default-cover.png">
+                <ul class="tools-list">
+                    <li class="card" ng-repeat="tool in tools">
+                        <img class="img" src="{{tool.cover}}">
                         <div class="card-details">
-                            <p class="card-name">Name</p>
-                            <p class="card-description">
-                                Descriptioneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-                            </p>
+                            <p class="card-name" ng-bind="tool.name">Nome</p>
+                            <p class="card-description" ng-bind="tool.description">Descrição</p>
                             <a href="#" class="redirect redirect-secondary">
                                 Visitar
                                 <span class="material-symbols-outlined">north_east</span>
                             </a>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
         </article>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="./assets/angular/script.js"></script>
+    <script src="./assets/angular/controllers/main.controller.js"></script>
 </body>
 
 </html>
