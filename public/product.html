@@ -56,21 +56,22 @@
         <!-- <aside class="img-product">
             Imagem
         </aside> -->
-        <article class="container-product" ng-controller="ProductController">
+        <article class="container-product" ng-controller="ItemController">
             <section class="product">
                 <div class="info-product">
                     <div class="nome-preco">
-                        <h1>Pizza Marguerita</h1>
-                        <p>R$ <span>10,00</span></p>
+                        <h1 ng-bind="item.name">Pizza Marguerita</h1>
+                        <p>R$ <span ng-bind="item.price.toLocaleString(3)">10,00</span></p>
                     </div>
                     <div class="descricao">
                         <h2>Descrição:</h2>
-                        <p>Clássica pizza italiana com molho de tomate, muçarela e manjericão fresco.</p>
+                        <p ng-bind="item.description">Clássica pizza italiana com molho de tomate, muçarela e manjericão
+                            fresco.</p>
                     </div>
                 </div>
-                
+
                 <div class="buttons">
-                    <button class="button">Adicionar no Carrinho</button>
+                    <button class="button" ng-click="addToCart(item)">Adicionar no Carrinho</button>
                     <button class="button button-secondary">Fazer Checkout</button>
                 </div>
             </section>
@@ -79,6 +80,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="./assets/angular/script.js"></script>
+    <script src="./assets/angular/services/auth.service.js"></script>
+    <script src="./assets/angular/services/products.service.js"></script>
+    <script src="./assets/angular/controllers/item.controller.js"></script>
     <script src="./assets/angular/controllers/auth.controller.js"></script>
 </body>
 

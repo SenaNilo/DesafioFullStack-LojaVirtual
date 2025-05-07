@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="stylesheet" href="./assets/styles/header.css">
     <link rel="stylesheet" href="./assets/styles/table.css">
+    <link rel="stylesheet" href="./assets/styles/dish.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,8 +57,24 @@
 
     <main id="main">
         <article class="container" ng-controller="ProductsController">
-            <h2 class="custom-title">Produtos</h2>
-            <table class="table">
+            <h2 class="custom-title">Cardápio</h2>
+            <div class="filters">
+                <div class="icon-btn">
+                    <span class="material-symbols-outlined">tune</span>
+                </div>
+                <div class="search-bar">
+                    <label class="material-symbols-outlined" for="search-input">search</label>
+                    <input ng-model="search" id="search-input" type="search" placeholder="Pesquisar...">
+                </div>
+            </div>
+            <div class="dish-list">
+                <div class="dish-item" ng-repeat="dish in products | filter:search" ng-click="redirectToProduct(dish)">
+                    <p class="dish-name" ng-bind="dish.name">Nome</p>
+                    <p class="dish-description" ng-bind="dish.description">Descrição</p>
+                    <p class="dish-price"><span class="price" ng-bind="dish.price | currency">0,00</span></p>
+                </div>
+            </div>
+            <!-- <table>
                 <thead>
                     <tr>
                         <th class="product-id">Id</th>
@@ -77,7 +94,7 @@
                                 carrinho</button></td>
                     </tr>
                 </tbody>
-            </table>
+            </table> -->
         </article>
     </main>
 

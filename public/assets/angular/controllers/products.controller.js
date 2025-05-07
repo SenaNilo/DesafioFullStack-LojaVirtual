@@ -2,16 +2,18 @@
 
 window.app.controller('ProductsController', function ($scope, ProductsService, AuthService) {
     $scope.products = [];
-
-    $scope.addToCart = async (product) => {
-        const user = await AuthService.getUser();
-        await ProductsService.addToCart(product.id, user.username);
-        $scope.$apply();
-    }
+    $scope.localCurrency = 'R$';
+    $scope.search = '';
 
     async function loadProducts() {
         $scope.products = await ProductsService.getAll();
         $scope.$apply();
+    }
+
+    $scope.redirectToProduct = (product) => {
+        ProductsService.setProduct(product);
+        const prod = ProductsService.getProduct();
+        window.location.href = "./product.html";
     }
 
     loadProducts();
