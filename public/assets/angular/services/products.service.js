@@ -11,13 +11,13 @@ window.app.service('ProductsService', function ($http) {
         return products;
     }
 
-    async function addToCart(product, user) {
+    async function addToCart(productId, username) {
         const url = './cart/add';
         const method = 'POST';
         const contentType = 'application/json';
         const headers = { 'Content-Type': contentType };
 
-        const body = JSON.stringify({ username: user.username, productId: product.id, quantity: 1 });
+        const body = JSON.stringify({ username, productId, quantity: 1 });
 
         await fetch(url, { method, headers, body });
         return cart;
@@ -53,7 +53,7 @@ window.app.service('ProductsService', function ($http) {
 
     return {
         getAll: () => fetchProducts(),
-        addToCart: (product, user) => addToCart(product, user),
+        addToCart: (productId, username) => addToCart(productId, username),
         getCartItems: (user) => getCartItems(user),
         removeFromCart: (productId, userId) => removeFromCart(productId, userId)
     }

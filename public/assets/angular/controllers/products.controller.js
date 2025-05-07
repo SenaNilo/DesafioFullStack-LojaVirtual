@@ -5,7 +5,7 @@ window.app.controller('ProductsController', function ($scope, ProductsService, A
 
     $scope.addToCart = async (product) => {
         const user = await AuthService.getUser();
-        await ProductsService.addToCart(product, user);
+        await ProductsService.addToCart(product.id, user.username);
         $scope.$apply();
     }
 

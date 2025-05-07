@@ -12,6 +12,7 @@ window.app.controller('CartController', function ($scope, ProductsService, AuthS
     $scope.remove = async (product) => {
         const user = await AuthService.getUser();
         await ProductsService.removeFromCart(product.id, user.id);
+        loadCart();
         $scope.$apply();
     }
 
