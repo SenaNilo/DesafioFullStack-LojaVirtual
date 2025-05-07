@@ -1,23 +1,47 @@
-#main{
+#main {
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    justify-content: center; 
+    justify-content: center;
     min-height: 100vh;
     margin: 0
 }
 
-#main aside.img-login{
+#main aside.img-login {
     background: url('../img/menuLogin.jpg');
     background-size: cover;
-    width: 100%;
+    width: 90%;
     /* height: 100%; */
 }
 
-article.container{
+article.container {
     width: 100%;
-    backgro
+    background-color: #806740;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 3.3rem;
+    color: white
 }
+
+article.container h2 {
+    font-weight: 700;
+    font-size: 3.5rem;
+    /* letter-spacing: 0.2rem; */
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        border-bottom: 0.4rem solid var(--c-brand);
+        border-radius: 1rem;
+        width: 10rem;
+        transform: translateY(0.3rem);
+        left: 0;
+        bottom: 0;
+    }
+}
+
 
 .form {
     display: flex;
@@ -26,6 +50,142 @@ article.container{
     max-width: 50rem;
 }
 
+/* Inputs */
+.textInputWrapper {
+    position: relative;
+    /* width: 180px; */
+    margin: 1.2rem 0;
+}
+
+.textInputWrapper:before {
+    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.textInputWrapper:before,
+.textInputWrapper:after {
+    content: "";
+    left: 0;
+    right: 0;
+    position: absolute;
+    pointer-events: none;
+    bottom: -1px;
+    z-index: 4;
+    width: 100%;
+}
+
+.textInputWrapper:focus-within:before {
+    border-bottom: 1px solid var(--c-brand-light);
+}
+
+.textInputWrapper:before {
+    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.textInputWrapper:focus-within:before {
+    border-bottom: 1px solid var(--c-brand-light);
+    transform: scaleX(1);
+}
+
+.textInputWrapper:focus-within:after {
+    border-bottom: 2px solid var(--c-brand-light);
+    transform: scaleX(1);
+}
+
+.textInputWrapper:after {
+    content: "";
+    transform: scaleX(0);
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    will-change: transform;
+    border-bottom: 2px solid var(--c-brand-light);
+    border-bottom-color: var(--c-brand-light);
+}
+
+.textInput::placeholder {
+    transition: opacity 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    opacity: 1;
+    user-select: none;
+    color: rgba(255, 255, 255, 0.582);
+}
+
+.textInputWrapper .textInput {
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
+    max-height: 36px;
+    background-color: #252525;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 200ms;
+    transition-property: background-color;
+    color: #e8e8e8;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px;
+    width: 100%;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+}
+
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
+    outline: none;
+}
+
+.textInputWrapper:focus-within .textInput,
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
+    background-color: #353535;
+}
+
+.textInputWrapper:focus-within .textInput::placeholder {
+    opacity: 0;
+}
+
+/* Buttons */
+.button {
+    cursor: pointer;
+    position: relative;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    color: var(--c-brand);
+    border: 0.2rem solid var(--c-brand);
+    border-radius: 3.4rem;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 5rem;
+    height: 5rem;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: var(--c-brand);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.button:hover::before {
+    scale: 2;
+}
+
+.button:hover {
+    color: var(--c-secondary);
+    scale: 1.1;
+    box-shadow: 0 0 2rem rgba(193, 163, 98, 0.4);
+}
+
+.button:active {
+    scale: 1;
+}
+
+/* 
 .input-group {
     display: flex;
     flex-direction: column;
@@ -40,11 +200,10 @@ article.container{
     border-radius: 4px;
     border: 1px solid rgba(0, 0, 0, 0.4);
     padding: 0.8rem;
-}
+}*/
 
 .btn-group {
     display: flex;
     gap: 1.6rem;
     margin-top: 0.8rem;
 }
-

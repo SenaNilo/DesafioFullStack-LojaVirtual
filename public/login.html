@@ -25,18 +25,18 @@
         <article class="container" ng-controller="AuthController">
             <h2 class="title">Login</h2>
             <form id="user-form" class="form form-validate" ng-submit="send()">
-                <div class="input-group">
-                    <label class="label" for="user-name">Nome</label>
-                    <input ng-model="user.username" ng-required="true" id="user-name" class="input" type="text"
+                <div class="textInputWrapper input-group">
+                    <!-- <label class="label" for="user-name">Nome</label> -->
+                    <input ng-model="user.username" ng-required="true" id="user-name" class="textInput input" type="text"
                         placeholder="Nome de usuário">
                 </div>
-                <div class="input-group">
-                    <label class="label" for="user-password">Senha</label>
-                    <input ng-model="user.password" ng-required="true" id="user-password" class="input" type="password"
-                        placeholder="********">
+                <div class="textInputWrapper input-group">
+                    <!-- <label class="label" for="user-password">Senha</label> -->
+                    <input ng-model="user.password" ng-required="true" id="user-password" class="textInput input" type="password"
+                        placeholder="Senha">
                 </div>
                 <div class="btn-group">
-                    <button class="btn btn-primary btn-send" type="submit">Enviar</button>
+                    <button class="button" type="submit">Enviar</button>
                 </div>
             </form>
         </article>
