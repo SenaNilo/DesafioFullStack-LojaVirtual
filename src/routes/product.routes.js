@@ -12,7 +12,6 @@ router.get('/', ProductController.list);
 // Delete como user mudar!!
 router.delete('/delete/:id', ProductController.deleteProduct)
 
-
-router.post('/',  verificarToken, ProductController.create); 
+router.post('/', ProductController.create); 
  
 module.exports = router; 
