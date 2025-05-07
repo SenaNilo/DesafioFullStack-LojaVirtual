@@ -17,7 +17,7 @@ class ProductController {
   }
   
   static async updateProduct(req, res){
-    const { name, price, description } = req.body; 
+    const { id, name, price, description } = req.body; 
 
     const updatedproduct = await prisma.product.update({
       where: {

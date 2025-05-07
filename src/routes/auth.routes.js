@@ -8,6 +8,8 @@ router.get('/', AuthController.getUsers)
 // Init no seed
 // router.get('/init', AuthController.initDatabase);
 router.post('/login', AuthController.login);
+
+router.post('/cadastrar', AuthController.createUser)
 router.delete('/delete/:id', AuthController.deleteUser)
 
 // Middleware

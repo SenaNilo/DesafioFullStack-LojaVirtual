@@ -5,9 +5,9 @@ const verificarToken = require('../middlewares/auth.middleware');
  
 router.get('/', ProductController.list); 
 
-// Delete como user mudar!!
 router.delete('/delete/:id', ProductController.deleteProduct)
 
 router.post('/', ProductController.create); 
+router.put('/update', ProductController.updateProduct); 
  
 module.exports = router; 
