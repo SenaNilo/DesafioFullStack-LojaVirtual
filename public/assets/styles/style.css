@@ -27,6 +27,37 @@ body {
     width: 100%;
     height: 88rem;
     padding: 1.6rem;
+    position: relative;
+}
+
+.about-us .redirect {
+    margin-top: 3.2rem;
+}
+
+.redirect {
+    outline: none;
+    border: none;
+    background: none;
+    text-decoration: none;
+    color: #f3f3f3;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border-radius: 0.4rem;
+    padding: 0.8rem 1.6rem;
+    transition: 0.5s ease-in-out;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.redirect span {
+    font-size: 2rem;
+}
+
+.redirect-primary {
+    background: #E59627;
+    color: #0B090B;
 }
 
 .hero::before {
@@ -93,6 +124,39 @@ body {
 
 .container .title {
     margin-bottom: 3.2rem;
+}
+
+.about-us {
+    margin-top: 6.4rem;
+}
+
+.about-us .container {
+    display: flex;
+    gap: 9.6rem;
+}
+
+.about-us .content {
+    width: 100%;
+    margin: 6.4rem 0;
+}
+
+.about-us .img {
+    width: 100%;
+    max-width: 53.6rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.about-us .title {
+    margin-bottom: 1.6rem;
+    font-family: Parisienne, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 6.4rem;
+}
+
+.about-us p {
+    font-size: 1.6rem;
+    line-height: 150%;
 }
 
 .custom-title {
