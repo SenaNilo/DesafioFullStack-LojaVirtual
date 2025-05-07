@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Login - Loja Virtual</title>
+    <title>Produto - Loja Virtual</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./assets/styles/style.css">
@@ -22,21 +22,27 @@
         <nav>navbar de exemplo</nav>
     </header>
     <main id="main">
-        <aside class="img-product">
+        <!-- <aside class="img-product">
             Imagem
-        </aside>
-        <article class="container" ng-controller="ProductController">
-            <div class="info-product">
-                <h1>Nome do produto</h1>
-                <p>descricao</p>
-            </div>
-
-            <p>preco</p>
-            
-            <div class="buttons">
-                <button>botao adicionar no carrinho</button>
-                <button>botao checkout</button>
-            </div>
+        </aside> -->
+        <article class="container-product" ng-controller="ProductController">
+            <section class="product">
+                <div class="info-product">
+                    <div class="nome-preco">
+                        <h1>Pizza Marguerita</h1>
+                        <p>R$ <span>10,00</span></p>
+                    </div>
+                    <div class="descricao">
+                        <h2>Descrição:</h2>
+                        <p>Clássica pizza italiana com molho de tomate, muçarela e manjericão fresco.</p>
+                    </div>
+                </div>
+                
+                <div class="buttons">
+                    <button class="button">Adicionar no Carrinho</button>
+                    <button class="button button-secondary">Fazer Checkout</button>
+                </div>
+            </section>
         </article>
     </main>
 
