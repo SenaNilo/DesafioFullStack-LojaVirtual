@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Produtos - Loja Virtual</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/header.css">
+    <link rel="stylesheet" href="./assets/styles/table.css">
+    <link rel="stylesheet" href="./assets/styles/dish.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Parisienne&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container">
+            <div class="navigation-bar">
+                <div class="logo"></div>
+                <nav>
+                    <ul>
+                        <li><a href=".">Home</a></li>
+                        <li><a href="./cardapio.html" class="active">Cardápio</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="actions">
+                <a href="#">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                </a>
+                <div class="user-profile">
+                    <span class="material-symbols-outlined">person</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <article class="container" ng-controller="ProductsController">
+            <h2 class="custom-title">Cardápio</h2>
+            <div class="filters">
+                <button class="icon-btn">
+                    <span class="material-symbols-outlined">tune</span>
+                </button>
+                <div class="search-bar">
+                    <label class="material-symbols-outlined" for="search-input">search</label>
+                    <input ng-model="search" id="search-input" type="search" placeholder="Pesquisar...">
+                </div>
+            </div>
+            <div class="dish-list">
+                <div class="dish-item" ng-repeat="dish in products | filter:search" ng-click="redirectToProduct(dish)">
+                    <p class="dish-name" ng-bind="dish.name">Nome</p>
+                    <p class="dish-description" ng-bind="dish.description">Descrição</p>
+                    <p class="dish-price"><span class="price" ng-bind="dish.price | currency">0,00</span></p>
+                </div>
+            </div>
+            <!-- <table>
+                <thead>
+                    <tr>
+                        <th class="product-id">Id</th>
+                        <th class="product-name">Nome</th>
+                        <th class="product-price">Preço</th>
+                        <th class="product-description">Descrição</th>
+                        <th class="product-addToCart">#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="product-row" ng-repeat="product in products">
+                        <td class="product-id" ng-bind="product.id">1</td>
+                        <td class="product-name" ng-bind="product.name">Produto 1</td>
+                        <td class="product-price">R$ <span ng-bind="product.price.toLocaleString()">10,00</span></td>
+                        <td class="product-description" ng-bind="product.description">Descrição do produto 1</td>
+                        <td class="product-addToCart"><button class="btn" ng-click="addToCart(product)">Adicionar ao
+                                carrinho</button></td>
+                    </tr>
+                </tbody>
+            </table> -->
+        </article>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="./assets/angular/script.js"></script>
+    <script src="./assets/angular/services/auth.service.js"></script>
+    <script src="./assets/angular/services/products.service.js"></script>
+    <script src="./assets/angular/controllers/products.controller.js"></script>
+    <script src="./assets/angular/controllers/cart.controller.js"></script>
+</body>
+
+</html>

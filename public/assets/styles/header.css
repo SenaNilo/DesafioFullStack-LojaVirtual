@@ -6,6 +6,7 @@
     left: 0;
     right: 0;
     backdrop-filter: blur(1px);
+    z-index: 100;
 }
 
 #header>.container {
@@ -92,7 +93,7 @@
 }
 
 #header .actions a.active {
-    & span{
+    & span {
         opacity: 1;
     }
 }
