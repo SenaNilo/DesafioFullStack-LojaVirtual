@@ -40,8 +40,8 @@ window.app.service('ProductsService', function ($http) {
         return products;
     }
 
-    async function removeFromCart(product) {
-        const response = await fetch(`./cart/delete/${product.id}`, { method: 'DELETE' })
+    async function removeFromCart(product, user) {
+        const response = await fetch(`./cart/delete/${product.id}/${user.id}`, { method: 'DELETE' })
             .then((res) => console.log(res))
     }
 
@@ -49,6 +49,6 @@ window.app.service('ProductsService', function ($http) {
         getAll: () => fetchProducts(),
         addToCart: (product) => addToCart(product),
         getCartItems: () => getCartItems(),
-        removeFromCart: (product) => removeFromCart(product)
+        removeFromCart: (product, user) => removeFromCart(product, user)
     }
 });
