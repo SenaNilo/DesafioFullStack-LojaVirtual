@@ -18,6 +18,10 @@
     --c-accent-light: #9D4EDD;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-size: 1.6rem;
     font-family: Kanit, Arial, Helvetica, sans-serif;
@@ -140,7 +144,7 @@ body {
 }
 
 .about-us {
-    margin-top: 6.4rem;
+    padding-top: 6.4rem;
 }
 
 .about-us .container {
@@ -199,6 +203,7 @@ body {
     transition: background 0.5s;
     font-weight: 600;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .btn-primary {

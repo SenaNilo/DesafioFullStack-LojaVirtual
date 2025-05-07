@@ -23,6 +23,12 @@
     flex-direction: column;
     overflow: hidden;
     scroll-snap-align: center;
+    opacity: 0.6;
+    transition: 0.4s ease-in-out;
+}
+
+.card:hover {
+    opacity: 1;
 }
 
 .card .img {
