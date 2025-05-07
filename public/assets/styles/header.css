@@ -1,0 +1,92 @@
+#header {
+    background: rgba(11, 9, 11, 0.8);
+    border-bottom: 1px solid rgba(243, 243, 243, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(1px);
+}
+
+#header>.container {
+    padding: 1.6rem;
+    max-width: 132rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header>.container>.navigation-bar {
+    display: flex;
+    gap: 6.4rem;
+    align-items: center;
+}
+
+#header>.container>.actions {
+    display: flex;
+    gap: 3.2rem;
+    align-items: center;
+}
+
+#header .actions a {
+    width: 3.2rem;
+    height: 3.2rem;
+    position: relative;
+}
+
+#header .actions a>span {
+    color: #F3F3F3;
+    opacity: 0.4;
+    font-size: 2.4rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#header .logo {
+    width: 6.4rem;
+    height: 3.2rem;
+    background: #E59627;
+    opacity: 0.8;
+    border-radius: 1.6rem 0 1.6rem 0;
+}
+
+#header .user-profile {
+    background: rgba(243, 243, 243, 0.1);
+    border-radius: 100%;
+    width: 3.2rem;
+    height: 3.2rem;
+    position: relative;
+}
+
+#header .user-profile>span {
+    color: #F3F3F3;
+    opacity: 0.4;
+    font-size: 2.4rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#header nav>ul {
+    list-style: none;
+    display: flex;
+    gap: 3.2rem;
+}
+
+#header nav a {
+    color: #f3f3f3;
+    opacity: 0.6;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+#header nav a.active {
+    color: #f3f3f3;
+    opacity: 0.8;
+    text-decoration: underline;
+    font-weight: 600;
+}

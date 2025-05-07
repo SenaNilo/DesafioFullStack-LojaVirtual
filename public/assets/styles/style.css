@@ -19,10 +19,12 @@
 body {
     font-size: 1.6rem;
     font-family: Kanit, Arial, Helvetica, sans-serif;
+    background: #0B090B;
+    color: #f3f3f3;
 }
 
 #main {
-    margin-top: 6.4rem;
+    margin: 12.8rem 0;
 }
 
 .container {
