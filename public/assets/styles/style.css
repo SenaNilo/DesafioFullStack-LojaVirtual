@@ -37,6 +37,13 @@ body {
     margin-bottom: 3.2rem;
 }
 
+.custom-title {
+    font-family: Parisienne, Arial, Helvetica, sans-serif;
+    font-size: 6.4rem;
+    font-weight: 400;
+    margin-bottom: 3.2rem;
+}
+
 .btn {
     outline: none;
     border: none;

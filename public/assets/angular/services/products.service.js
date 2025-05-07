@@ -3,6 +3,7 @@
 window.app.service('ProductsService', function ($http) {
     let products = [];
     let cart = [];
+    let productId = 0;
 
     async function fetchProducts() {
         const url = './products';
@@ -49,6 +50,10 @@ window.app.service('ProductsService', function ($http) {
         const url = `./cart/delete/${productId}/${userId}`;
         const method = 'DELETE';
         const response = await fetch(url, { method });
+    }
+
+    function setProduct() {
+
     }
 
     return {
