@@ -90,3 +90,9 @@
     text-decoration: underline;
     font-weight: 600;
 }
+
+#header .actions a.active {
+    & span{
+        opacity: 1;
+    }
+}

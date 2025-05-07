@@ -1,14 +1,8 @@
-header{
-    /* width: 100vw; */
-    background-color: blanchedalmond;
-    height: 5rem;
-}
-
 #main {
     display: flex;
     flex-direction: row;
     width: 100%;
-    min-height: calc(100vh - 5rem);
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     background: url('../img/itemBkg.jpg');
