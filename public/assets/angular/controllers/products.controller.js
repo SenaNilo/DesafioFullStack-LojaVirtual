@@ -1,10 +1,11 @@
 // @ts-nocheck
 
-window.app.controller('ProductsController', function ($scope, ProductsService) {
+window.app.controller('ProductsController', function ($scope, ProductsService, AuthService) {
     $scope.products = [];
 
     $scope.addToCart = async (product) => {
-        await ProductsService.addToCart(product);
+        const user = await AuthService.getUser();
+        await ProductsService.addToCart(product, user);
         $scope.$apply();
     }
 

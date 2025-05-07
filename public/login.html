@@ -27,13 +27,13 @@
             <form id="user-form" class="form form-validate" ng-submit="send()">
                 <div class="textInputWrapper input-group">
                     <!-- <label class="label" for="user-name">Nome</label> -->
-                    <input ng-model="user.username" ng-required="true" id="user-name" class="textInput input" type="text"
-                        placeholder="Nome de usuário">
+                    <input ng-model="user.username" ng-required="true" id="user-name" class="textInput input"
+                        type="text" placeholder="Nome de usuário">
                 </div>
                 <div class="textInputWrapper input-group">
                     <!-- <label class="label" for="user-password">Senha</label> -->
-                    <input ng-model="user.password" ng-required="true" id="user-password" class="textInput input" type="password"
-                        placeholder="Senha">
+                    <input ng-model="user.password" ng-required="true" id="user-password" class="textInput input"
+                        type="password" placeholder="Senha">
                 </div>
                 <div class="btn-group">
                     <button class="button" type="submit">Enviar</button>
@@ -44,6 +44,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="./assets/angular/script.js"></script>
+    <script src="./assets/angular/services/auth.service.js"></script>
     <script src="./assets/angular/controllers/auth.controller.js"></script>
 </body>
 

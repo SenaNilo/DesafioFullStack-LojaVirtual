@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-window.app.service('ProductsService', function ($http, AuthService) {
+window.app.service('ProductsService', function ($http) {
     let products = [];
     let cart = [];
 
@@ -11,12 +11,11 @@ window.app.service('ProductsService', function ($http, AuthService) {
         return products;
     }
 
-    async function addToCart(product) {
+    async function addToCart(product, user) {
         const url = './cart/add';
         const method = 'POST';
         const contentType = 'application/json';
         const headers = { 'Content-Type': contentType };
-        const user = AuthService.getUser();
 
         const body = JSON.stringify({ username: user.username, productId: product.id, quantity: 1 });
 
@@ -24,12 +23,11 @@ window.app.service('ProductsService', function ($http, AuthService) {
         return cart;
     }
 
-    async function getCartItems() {
+    async function getCartItems(user) {
         const url = './cart/';
         const method = 'POST';
         const contentType = 'application/json';
         const headers = { 'Content-Type': contentType };
-        const user = AuthService.getUser();
 
         const body = JSON.stringify({ username: user.username });
 
@@ -47,17 +45,16 @@ window.app.service('ProductsService', function ($http, AuthService) {
         return products;
     }
 
-    async function removeFromCart({ product, user }) {
-        const url = `./cart/delete/${product.id}/${user.id}`;
+    async function removeFromCart(productId, userId) {
+        const url = `./cart/delete/${productId}/${userId}`;
         const method = 'DELETE';
-
         const response = await fetch(url, { method });
     }
 
     return {
         getAll: () => fetchProducts(),
-        addToCart: (product) => addToCart(product),
-        getCartItems: () => getCartItems(),
-        removeFromCart: ({ product, user }) => removeFromCart({ product, user })
+        addToCart: (product, user) => addToCart(product, user),
+        getCartItems: (user) => getCartItems(user),
+        removeFromCart: (productId, userId) => removeFromCart(productId, userId)
     }
 });
