@@ -58,6 +58,15 @@
     <main id="main">
         <article class="container" ng-controller="ProductsController">
             <h2 class="custom-title">Cardápio</h2>
+            <div class="filters">
+                <div class="icon-btn">
+                    <span class="material-symbols-outlined">tune</span>
+                </div>
+                <div class="search-bar">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="search" placeholder="Pesquisar...">
+                </div>
+            </div>
             <div class="dish-list">
                 <div class="dish-item" ng-repeat="dish in products">
                     <p class="dish-name" ng-bind="dish.name">Nome</p>
