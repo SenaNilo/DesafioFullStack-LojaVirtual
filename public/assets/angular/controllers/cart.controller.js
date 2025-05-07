@@ -9,7 +9,8 @@ window.app.controller('CartController', function ($scope, ProductsService) {
     }
 
     $scope.remove = async (product) => {
-        await ProductsService.removeFromCart(product);
+        const user = { id: 3 }
+        await ProductsService.removeFromCart(product, user);
         $scope.$apply();
     }
 
