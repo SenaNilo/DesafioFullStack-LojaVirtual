@@ -102,15 +102,20 @@ class CartController {
 
     static async deleteProduct(req, res) {
         // Deletar o produto do carrinho
-        const { id } = req.params
+        const { productId, userId } = req.params
 
-        const deleteProduct = await prisma.cartItem.delete({
-            where: {
-                productId: parseInt(id)
-            }
-        })
+        try {
+            const deleteProduct = await prisma.cartItem.deleteMany({
+                where: {
+                    userId: parseInt(userId),
+                    productId: parseInt(productId)
+                }
+            })
 
-        res.json(deleteProduct)
+            res.json(deleteProduct)
+        } catch(error){
+            res.status(500).json({ error: "Erro ao deletar produto do carrinho" });
+        }
     }
 }
 
