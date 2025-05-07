@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Login - Loja Virtual</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/product.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>navbar de exemplo</nav>
+    </header>
+    <main id="main">
+        <aside class="img-product">
+            Imagem
+        </aside>
+        <article class="container" ng-controller="ProductController">
+            <div class="info-product">
+                <h1>Nome do produto</h1>
+                <p>descricao</p>
+            </div>
+
+            <p>preco</p>
+            
+            <div class="buttons">
+                <button>botao adicionar no carrinho</button>
+                <button>botao checkout</button>
+            </div>
+        </article>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="./assets/angular/script.js"></script>
+    <script src="./assets/angular/controllers/auth.controller.js"></script>
+</body>
+
+</html>

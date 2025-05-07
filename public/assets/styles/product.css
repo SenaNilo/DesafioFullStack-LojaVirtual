@@ -1,0 +1,31 @@
+header{
+    /* width: 100vw; */
+    background-color: blanchedalmond;
+    height: 5rem;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 100vh;
+    margin: 0
+}
+
+#main aside.img-product {
+    background: url('../img/item.jpg');
+    background-size: cover;
+    width: 40%;
+    /* height: 100%; */
+}
+
+article.container {
+    width: 60%;
+    background-color: var(--c-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 3.3rem;
+    color: var(--c-secondary)
+}
+
