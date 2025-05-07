@@ -1,7 +1,11 @@
 .filters {
     display: flex;
     gap: 1.6rem;
-    margin-bottom: 6.4rem;
+    margin-bottom: 3.2rem;
+}
+
+.dish-actions {
+    margin-bottom: 3.2rem;
 }
 
 .filters .icon-btn {
