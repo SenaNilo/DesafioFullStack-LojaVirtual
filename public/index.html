@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Produtos - Loja Virtual</title>
+    <title>Loja Virtual</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <link rel="stylesheet" href="./assets/styles/style.css">
@@ -39,8 +39,8 @@
                 <div class="logo"></div>
                 <nav>
                     <ul>
-                        <li><a href="#" class="active">Home</a></li>
-                        <li><a href="#">Cardápio</a></li>
+                        <li><a href="." class="active">Home</a></li>
+                        <li><a href="./cardapio.html">Cardápio</a></li>
                     </ul>
                 </nav>
             </div>
@@ -55,55 +55,19 @@
         </div>
     </header>
 
-    <main id="main">
-        <article class="container" ng-controller="ProductsController">
-            <h2 class="custom-title">Cardápio</h2>
-            <div class="filters">
-                <div class="icon-btn">
-                    <span class="material-symbols-outlined">tune</span>
-                </div>
-                <div class="search-bar">
-                    <label class="material-symbols-outlined" for="search-input">search</label>
-                    <input ng-model="search" id="search-input" type="search" placeholder="Pesquisar...">
-                </div>
+    <main>
+        <article class="hero">
+            <div class="container">
+                <h1 class="main-title">O Restaurante do <span>futuro</span></h1>
+                <p>Peça já o <strong>seu prato favorito</strong>, e receba-o em sua casa <strong>imediatamente</strong>
+                </p>
+                <button class="btn btn-primary" type="button">Saiba mais</button>
             </div>
-            <div class="dish-list">
-                <div class="dish-item" ng-repeat="dish in products | filter:search" ng-click="redirectToProduct(dish)">
-                    <p class="dish-name" ng-bind="dish.name">Nome</p>
-                    <p class="dish-description" ng-bind="dish.description">Descrição</p>
-                    <p class="dish-price"><span class="price" ng-bind="dish.price | currency">0,00</span></p>
-                </div>
-            </div>
-            <!-- <table>
-                <thead>
-                    <tr>
-                        <th class="product-id">Id</th>
-                        <th class="product-name">Nome</th>
-                        <th class="product-price">Preço</th>
-                        <th class="product-description">Descrição</th>
-                        <th class="product-addToCart">#</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="product-row" ng-repeat="product in products">
-                        <td class="product-id" ng-bind="product.id">1</td>
-                        <td class="product-name" ng-bind="product.name">Produto 1</td>
-                        <td class="product-price">R$ <span ng-bind="product.price.toLocaleString()">10,00</span></td>
-                        <td class="product-description" ng-bind="product.description">Descrição do produto 1</td>
-                        <td class="product-addToCart"><button class="btn" ng-click="addToCart(product)">Adicionar ao
-                                carrinho</button></td>
-                    </tr>
-                </tbody>
-            </table> -->
         </article>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="./assets/angular/script.js"></script>
-    <script src="./assets/angular/services/auth.service.js"></script>
-    <script src="./assets/angular/services/products.service.js"></script>
-    <script src="./assets/angular/controllers/products.controller.js"></script>
-    <script src="./assets/angular/controllers/cart.controller.js"></script>
 </body>
 
 </html>

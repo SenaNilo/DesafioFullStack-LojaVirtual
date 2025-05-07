@@ -21,7 +21,7 @@ window.app.controller('CartController', function ($scope, ProductsService, AuthS
     }
 
     $scope.returnCardapio = () => {
-        window.location.href = "index.html"
+        window.location.href = "./cardapio.html"
     }
 
     loadCart();
