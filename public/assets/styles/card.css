@@ -1,0 +1,55 @@
+.tools-list {
+    display: flex;
+    gap: 3.2rem;
+    width: 100%;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.tools-list::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    height: 40rem;
+    width: 32rem;
+    min-width: 32rem;
+    background: #181519;
+    border-radius: 0.8rem;
+    border: 2px solid rgba(243, 243, 243, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    scroll-snap-align: center;
+}
+
+.card .img {
+    width: 100%;
+    height: 100%;
+}
+
+.card .card-details {
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    position: relative;
+    height: 100%;
+}
+
+.card .card-name {
+    color: #f3f3f3;
+    font-size: 2rem;
+}
+
+.card .card-description {
+    color: rgba(243, 243, 243, 0.8);
+    font-size: 1.6rem;
+    overflow-wrap: break-word;
+}
+
+.card .redirect {
+    position: absolute;
+    bottom: 1.6rem;
+}
