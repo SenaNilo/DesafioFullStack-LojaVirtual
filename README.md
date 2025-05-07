@@ -1,5 +1,9 @@
-# Desafio Loja Virtual
+<p align="center">
+  <h1 align="center">Loja Virtual</h1>
+  <p align="center"><strong>O Restaurante do futuro</strong></p>
+</p>
 
+## Sobre o Projeto
 Uma breve descrição sobre o que esse projeto faz e para quem ele é
 
 <!--
