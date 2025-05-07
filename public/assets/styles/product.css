@@ -52,7 +52,7 @@ section.product{
         
     }
 
-    & .nome-preco{
+    & .name-price{
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
@@ -66,13 +66,14 @@ section.product{
         } 
     }
 
-    & .descricao{
+    & .description{
         margin-top: 2rem;
-        background: var(--c-primary);
+        background: #181519;
+        border: 1px solid rgba(243, 243, 243, 0.2);
+        border-radius: 0.8rem;
         padding: 1.6rem;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 1rem;
-        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
 
         h2{
             font-size: 1.7rem;
