@@ -23,17 +23,18 @@ article.container-product {
     color: var(--c-secondary)
 }
 
-section.product{
+section.product {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
 
-    .info-product{
+    .info-product {
         width: 60%;
         padding: 0 10rem 0 5.5rem;
     }
-    .buttons{
+
+    .buttons {
         width: 30%;
         display: flex;
         flex-direction: column;
@@ -45,28 +46,30 @@ section.product{
             border: 0.2rem solid var(--c-brand-light);
             background-color: var(--c-brand-light);
         }
+
         .button::before {
             width: 52%;
             background-color: var(--c-brand-light);
         }
-        
+
     }
 
-    & .name-price{
+    & .name-price {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
 
-        h1{
+        h1 {
             font-size: 4.6rem;
             font-weight: 600;
         }
-        p{
+
+        p {
             font-size: 3.8rem
-        } 
+        }
     }
 
-    & .description{
+    & .description {
         margin-top: 2rem;
         background: #181519;
         border: 1px solid rgba(243, 243, 243, 0.2);
@@ -75,7 +78,7 @@ section.product{
         display: flex;
         flex-direction: column;
 
-        h2{
+        h2 {
             font-size: 1.7rem;
             margin-bottom: 1rem;
         }

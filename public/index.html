@@ -8,9 +8,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <link rel="stylesheet" href="./assets/styles/style.css">
-    <link rel="stylesheet" href="./assets/styles/header.css">
-    <link rel="stylesheet" href="./assets/styles/table.css">
-    <link rel="stylesheet" href="./assets/styles/dish.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,11 +55,12 @@
         </div>
     </header>
 
-    <main class="main">
-        <article class="hero">
+    <main id="main" style="margin-top: 0;">
+        <article id="hero">
             <div class="container">
-                <h1 class="main-title">O Restaurante do <span>futuro</span></h1>
-                <p>Peça já o <strong>seu prato favorito</strong>, e receba-o em sua casa <strong>imediatamente</strong>
+                <h1 class="hero-title">O Restaurante do <span>futuro</span></h1>
+                <p class="hero-subtitle">
+                    Peça já o <strong>seu prato favorito</strong>, e receba-o em sua casa <strong>imediatamente</strong>
                 </p>
                 <a class="btn btn-primary" href="#about-us">Saiba mais</a>
             </div>
@@ -71,7 +69,7 @@
             <div class="container">
                 <div class="content">
                     <h2 class="title">Quem somos</h2>
-                    <p>
+                    <p class="body-text">
                         O iFood é uma empresa brasileira de tecnologia que aproxima clientes, restaurantes e
                         entregadores de forma simples e prática.E, para proporcionar uma experiência incrível para todo
                         mundo, nossa entrega vai muito além do delivery.
@@ -91,8 +89,8 @@
                     <li class="card" ng-repeat="tool in tools">
                         <img class="img" src="{{tool.cover}}">
                         <div class="card-details">
-                            <p class="card-name" ng-bind="tool.name">Nome</p>
-                            <p class="card-description" ng-bind="tool.description">Descrição</p>
+                            <p class="lg-text card-name" ng-bind="tool.name">Nome</p>
+                            <p class="body-text card-description" ng-bind="tool.description">Descrição</p>
                             <a href="#" class="redirect redirect-secondary">
                                 Visitar
                                 <span class="material-symbols-outlined">north_east</span>

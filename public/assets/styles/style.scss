@@ -1,5 +1,42 @@
+// Atoms
+@use './atoms/typo';
+@use './atoms/container';
+@use './atoms/buttons';
+@use './atoms/redirect';
+@use './atoms/input';
+
+// Molecules
+@use './molecules/card';
+@use './molecules/dish';
+@use './molecules/filters';
+@use './molecules/form';
+
+// Organisms
+@use './organisms/header';
+@use './organisms/hero';
+@use './organisms/about-us';
+@use './organisms/tools';
+@use './organisms/cardapio';
+@use './organisms/cart';
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: Kanit, Arial, Helvetica, sans-serif;
+    background: #0B090B;
+    color: #f3f3f3;
+    overflow-x: hidden;
+}
+
+#main {
+    margin: 12.8rem 0;
 }

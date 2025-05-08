@@ -1,0 +1,39 @@
+.filters {
+    display: flex;
+    gap: 1.6rem;
+    margin-bottom: 3.2rem;
+}
+
+.filters .icon-btn {
+    background: rgba(243, 243, 243, 0.1);
+    border: 2px solid rgba(243, 243, 243, 0.4);
+    border-radius: 0.4rem;
+    width: 4.8rem;
+    height: 4.8rem;
+    position: relative;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.filters .icon-btn:hover {
+    border-color: rgba(243, 243, 243, 0.6);
+}
+
+.filters .icon-btn:active {
+    background: rgba(243, 243, 243, 0.15);
+    border-color: rgba(243, 243, 243, 0.6);
+}
+
+.filters .icon-btn:hover>span {
+    color: rgba(243, 243, 243, 0.8);
+}
+
+.filters .icon-btn>span {
+    font-size: 2.4rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(243, 243, 243, 0.6);
+    user-select: none;
+}
