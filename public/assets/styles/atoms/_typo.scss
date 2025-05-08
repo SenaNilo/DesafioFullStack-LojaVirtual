@@ -1,3 +1,9 @@
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
 .hero-title {
     width: 50rem;
     font-family: Parisienne, Arial, Helvetica, sans-serif;
@@ -48,6 +54,11 @@
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 150%;
+
+    & strong {
+        font-weight: 600;
+        color: #FF8500;
+    }
 }
 
 .sm-text {
