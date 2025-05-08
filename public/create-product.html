@@ -34,7 +34,7 @@
     </style>
 </head>
 
-<body class="product-form-page">
+<body>
     <header id="header">
         <div class="container">
             <div class="navigation-bar">
@@ -60,29 +60,33 @@
         </div>
     </header>
 
-    <main id="main">
+    <main id="main" style="margin: 0;">
+        <div class="background-container">
+            <article class="product-form-container" ng-controller="ProductsController">
+                <h2 class="title">Criar Novo Produto</h2>
 
-        <article class="container-product" ng-controller="ProductsController">
-            <h2 class="title">Criar Novo Produto</h2>
-            <form id="product-form" class="form form-validate" ng-submit="createProduct()">
-                <div class="textInputWrapper input-group">
-                    <input ng-model="item.name" ng-required="true" id="product-name" class="textInput input" type="text"
-                        placeholder="Nome do produto">
-                </div>
-                <div class="textInputWrapper input-group">
-                    <input ng-model="item.description" ng-required="true" id="product-description"
-                        class="textInput input" type="text" placeholder="Descrição">
-                </div>
-                <div class="textInputWrapper input-group">
-                    <input ng-model="item.price" ng-required="true" id="product-price" class="textInput input"
-                        type="number" step="0.01" placeholder="Preço">
-                </div>
+                <form id="product-form" class="form form-validate" ng-submit="createProduct()">
+                    <div class="textInputWrapper input-group">
+                        <input ng-model="item.name" ng-required="true" id="product-name" class="textInput input"
+                            type="text" placeholder="Nome do produto">
+                    </div>
 
-                <div class="btn-group">
-                    <button class="button" type="submit">Enviar</button>
-                </div>
-            </form>
-        </article>
+                    <div class="textInputWrapper input-group">
+                        <input ng-model="item.description" ng-required="true" id="product-description"
+                            class="textInput input" type="text" placeholder="Descrição">
+                    </div>
+
+                    <div class="textInputWrapper input-group">
+                        <input ng-model="item.price" ng-required="true" id="product-price" class="textInput input"
+                            type="number" step="0.01" placeholder="Preço">
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="button" type="submit">Enviar</button>
+                    </div>
+                </form>
+            </article>
+        </div>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
