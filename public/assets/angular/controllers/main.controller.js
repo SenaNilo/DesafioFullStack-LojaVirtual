@@ -25,6 +25,12 @@ window.app.controller('MainController', function ($scope) {
             description: "Superheroic JavaScript MVW Framework.",
             cover: "./assets/img/angular-cover.png",
             redirect: "https://angularjs.org/"
+        },
+        {
+            name: "Sass",
+            description: "CSS com super poderes",
+            cover: "./assets/img/sass-cover.png",
+            redirect: "https://sass-lang.com/"
         }
     ]
 });
