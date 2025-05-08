@@ -47,7 +47,7 @@ window.app.controller('ProductsController', function ($scope, ProductsService, A
             $scope.item.description = ""
 
             $scope.$apply()
-            window.location.href = "./cardapio.html";
+            window.location.href = "./dishes.html";
         } catch (error) {
             alert("Produto não Cadastrado!")
             console.log(error)
