@@ -49,6 +49,7 @@ Estas são as ferramentas que utilizamos para desenvolver este projeto:
 
 - **Frontend**
   - AngularJS
+  - Sass
 
 - **Testes de API**
   - Postman
