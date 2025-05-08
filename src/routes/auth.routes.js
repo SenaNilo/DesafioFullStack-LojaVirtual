@@ -5,8 +5,6 @@ const AuthController = require('../controller/AuthController');
 const verificarToken = require('../middlewares/auth.middleware')
 
 router.get('/', AuthController.getUsers)
-// Init no seed
-// router.get('/init', AuthController.initDatabase);
 router.post('/login', AuthController.login);
 
 router.post('/cadastrar', AuthController.createUser)
