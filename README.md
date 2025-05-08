@@ -79,40 +79,29 @@ cd DesafioFullStack-LojaVirtual
 npm install
 ```
 
-4. Instale o nodemon
-```sh
-npm install -D nodemon 
+4. Configure seu arquivo `.env`
+```
+DATABASE_URL="file:./dev.db"
+ACCESS_KEY="chavedpscolocar"
 ```
 
-5. Inicialize o Prisma
+5. Gere o Prisma Client
 ```sh
-npx prisma init 
+npx prisma generate
 ```
 
-6. Mapeie o modelo de dados para o esquema do banco de dados
-```sh
-npx prisma migrate dev --name init
-```
-
-7. Configure seu arquivo `.env`
-
-8. Inicialize os dados do projeto
-```sh
-npx prisma db seed
-```
-
-9. Inicie o servidor na sua máquina
+6. Inicie o servidor na sua máquina
 ```sh
 npm run dev
 ```
 
-10. Iniciar o Prisma Studio _(opcional)_
+7. Inicie o Prisma Studio na sua máquina _(opcional)_
 ```sh
 npx prisma studio
 ```
 
 
+<!-- 
+TODO: Adicione a licença do projeto 
 ## Licença
-
-<!-- TODO: Adicione a licença do projeto 
 [MIT](https://choosealicense.com/licenses/mit/) -->
