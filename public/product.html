@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./assets/styles/style.css">
+    <!-- <link rel="stylesheet" href="./assets/oldStyles/style.css">
+    <link rel="stylesheet" href="./assets/oldStyles/header.css">
+    <link rel="stylesheet" href="./assets/oldStyles/product.css"> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,30 +57,30 @@
         </div>
     </header>
 
-    <main id="main">
-        <!-- <aside class="img-product">
-            Imagem
-        </aside> -->
-        <article class="container-product" ng-controller="ItemController">
-            <section class="product">
-                <div class="info-product">
-                    <div class="name-price">
-                        <h1 ng-bind="item.name">Pizza Marguerita</h1>
-                        <p>R$ <span ng-bind="item.price.toLocaleString(3)">10,00</span></p>
+    <main id="main" style="margin: 0;">
+        <div class="background-container">
+            <article class="product-container" ng-controller="ItemController">
+                <section class="product">
+                    <div class="product-details">
+                        <div class="name-price">
+                            <h2 ng-bind="item.name">Pizza Marguerita</h2>
+                            <p>R$ <span ng-bind="item.price.toLocaleString(3)">10,00</span></p>
+                        </div>
+                        <div class="description">
+                            <h2>Descrição:</h2>
+                            <p ng-bind="item.description">Clássica pizza italiana com molho de tomate, muçarela e
+                                manjericão
+                                fresco.</p>
+                        </div>
                     </div>
-                    <div class="description">
-                        <h2>Descrição:</h2>
-                        <p ng-bind="item.description">Clássica pizza italiana com molho de tomate, muçarela e manjericão
-                            fresco.</p>
-                    </div>
-                </div>
 
-                <div class="buttons">
-                    <button class="button" ng-click="addToCart(item)">Adicionar no Carrinho</button>
-                    <button class="button button-secondary">Fazer Checkout</button>
-                </div>
-            </section>
-        </article>
+                    <div class="product-button-group">
+                        <button class="button" ng-click="addToCart(item)">Adicionar no Carrinho</button>
+                        <button class="button button-secondary">Fazer Checkout</button>
+                    </div>
+                </section>
+            </article>
+        </div>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
