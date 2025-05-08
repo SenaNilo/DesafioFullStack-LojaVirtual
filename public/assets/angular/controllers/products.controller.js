@@ -29,7 +29,7 @@ window.app.controller('ProductsController', function ($scope, ProductsService, A
         let description = $scope.item.description
 
         try {
-            const response = await fetch('http://localhost:3000/products/', {
+            const response = await fetch('./products/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -52,18 +52,21 @@ window.app.service('ProductsService', function ($http) {
     }
 
     async function updateQuantity(productId, userId, newQuantity) {
-        const response = await fetch(`http://localhost:3000/cart/update/${productId}/${userId}`, {
-            method: 'PUT',  // ou PATCH, dependendo da sua escolha
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ quantity: newQuantity })
-        });
-    
+        const url = `./cart/update/${productId}/${userId}`
+        const method = 'PUT';
+        const contentType = 'application/json';
+        const headers = { 'Content-Type': contentType };
+
+        const body = JSON.stringify({ quantity: newQuantity });
+
+        const response = await fetch(url, { method, headers, body });
+
         const data = await response.json();
+
         if (!response.ok) {
             alert('Erro ao atualizar a quantidade.');
         }
+
         return data;
     }
 
