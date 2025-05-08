@@ -1,6 +1,7 @@
-#product-form{
+#product-form {
     width: 40rem;
-    & .btn-group .button{
+
+    & .btn-group .button {
         width: 100%;
     }
 }

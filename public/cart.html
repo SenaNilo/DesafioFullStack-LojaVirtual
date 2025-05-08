@@ -8,8 +8,9 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <link rel="stylesheet" href="./assets/styles/style.css">
-    <link rel="stylesheet" href="./assets/styles/header.css">
-    <link rel="stylesheet" href="./assets/styles/cart.css">
+    <!-- <link rel="stylesheet" href="./assets/oldStyles/style.css">
+    <link rel="stylesheet" href="./assets/oldStyles/header.css">
+    <link rel="stylesheet" href="./assets/oldStyles/cart.css"> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,60 +59,36 @@
     </header>
 
     <main id="main">
-        <article class="container" ng-controller="CartController">
-            <h2 class="custom-title">Carrinho</h2>
-            
-            <div ng-repeat="product in cart" class="product">
-                <div class="description">
-                    <span ng-bind="product.id" style="display: none;">id</span>
-                    <h2 ng-bind="product.name">Prato 1</h2>
+        <article id="cart-container" class="container" ng-controller="CartController">
+            <h2 class="title">Carrinho</h2>
+
+            <div class="cart-item" ng-repeat="product in cart">
+                <div class="cart-product-details">
+                    <!-- <span ng-bind="product.id">id</span> -->
+                    <p class="cart-product-name" ng-bind="product.name">Prato 1</p>
                     <p ng-bind="product.description">Descricao</p>
-                    <p>R$ <span ng-bind="product.price.toLocaleString()">10,00</span></p>
+                    <p><span ng-bind="product.price | currency">10,00</span></p>
                 </div>
-                
-                <div class="config-product">
-                    <div class="quantity">
-                        <button ng-click="updateQuantity(product, 1)" class="qtd-modifier">+</button>
+
+                <div class="cart-actions">
+                    <div class="cart-quantity-action">
+                        <button class="qtd-modifier" ng-click="updateQuantity(product, 1)">+</button>
 
                         <span ng-bind="product.quantity">0</span>
 
-                        <button ng-click="updateQuantity(product, -1)" class="qtd-modifier">-</button>
+                        <button class="qtd-modifier" ng-click="updateQuantity(product, -1)">-</button>
                     </div>
 
-                    <span ng-click="remove(product)" class="delete material-symbols-outlined">delete</span>
+                    <span ng-click="remove(product)" class="material-symbols-outlined delete">delete</span>
                 </div>
             </div>
 
-            <!-- Design do modelo de produtos -->
-            
-            <!-- 
-            <div class="product">
-                <div class="description">
-                    <span style="display: none;">id</span>
-                    <h2>Prato 1</h2>
-                    <p>Descricao</p>
-                    <p>R$ <span>10,00</span></p>
-                </div>
-                
-                <div class="config-product">
-                    <div class="quantity">
-                        <button class="qtd-modifier">+</button>
-                        <span>0</span>
-                        <button class="qtd-modifier">-</button>
-                    </div>
-
-                    <span class="delete material-symbols-outlined">delete</span>
-                </div>
-            </div>  -->
-
-            <div ng-show="!hasProducts" class="buttons">
-                <button ng-click="returnCardapio()" class="button button-secondary">Voltar ao Cardápio</button>
+            <div class="button-group" ng-show="!hasProducts">
+                <button class="button" ng-click="returnCardapio()">Voltar ao Cardápio</button>
                 <button class="button">Fazer Checkout</button>
             </div>
-        
-            
+
             <p class="no-items" ng-show="hasProducts">Nenhum item em seu carrinho</p>
-            
         </article>
     </main>
 

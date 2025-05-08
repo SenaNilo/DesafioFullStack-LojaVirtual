@@ -8,11 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./assets/styles/style.css">
-    <link rel="stylesheet" href="./assets/styles/header.css">
-    <link rel="stylesheet" href="./assets/styles/product.css">
-    <link rel="stylesheet" href="./assets/styles/form.css">
-    <link rel="stylesheet" href="./assets/styles/create-product.css">
-    
+
+    <!-- <link rel="stylesheet" href="./assets/oldStyles/style.css">
+    <link rel="stylesheet" href="./assets/oldStyles/header.css">
+    <link rel="stylesheet" href="./assets/oldStyles/product.css">
+    <link rel="stylesheet" href="./assets/oldStyles/form.css">
+    <link rel="stylesheet" href="./assets/oldStyles/create-product.css"> -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -32,7 +34,7 @@
     </style>
 </head>
 
-<body>
+<body class="product-form-page">
     <header id="header">
         <div class="container">
             <div class="navigation-bar">
@@ -61,24 +63,21 @@
     <main id="main">
 
         <article class="container-product" ng-controller="ProductsController">
-            <h2 class="custom-title">Criar Novo Produto</h2>
+            <h2 class="title">Criar Novo Produto</h2>
             <form id="product-form" class="form form-validate" ng-submit="createProduct()">
                 <div class="textInputWrapper input-group">
-                    <input ng-model="item.name" ng-required="true" id="product-name" class="textInput input"
-                        type="text" placeholder="Nome do produto">
+                    <input ng-model="item.name" ng-required="true" id="product-name" class="textInput input" type="text"
+                        placeholder="Nome do produto">
                 </div>
                 <div class="textInputWrapper input-group">
-                    <input ng-model="item.description" ng-required="true" id="product-description" class="textInput input"
-                        type="text" placeholder="Descrição">
+                    <input ng-model="item.description" ng-required="true" id="product-description"
+                        class="textInput input" type="text" placeholder="Descrição">
                 </div>
                 <div class="textInputWrapper input-group">
-                    <input 
-                    ng-model="item.price" ng-required="true" id="product-price" class="textInput input"
-                        type="number" 
-                        step="0.01"
-                        placeholder="Preço">
+                    <input ng-model="item.price" ng-required="true" id="product-price" class="textInput input"
+                        type="number" step="0.01" placeholder="Preço">
                 </div>
-                
+
                 <div class="btn-group">
                     <button class="button" type="submit">Enviar</button>
                 </div>

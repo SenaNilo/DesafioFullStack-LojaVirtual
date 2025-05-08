@@ -1,0 +1,13 @@
+.dish-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(28rem, auto));
+    gap: 3.2rem;
+}
+
+.dish-actions {
+    margin-bottom: 3.2rem;
+}
+
+.title+.filters {
+    margin-bottom: 6.4rem;
+}

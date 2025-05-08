@@ -1,0 +1,38 @@
+.redirect {
+    outline: none;
+    border: none;
+    background: none;
+    text-decoration: none;
+    color: #f3f3f3;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border-radius: 0.4rem;
+    padding: 0.8rem 1.6rem;
+    transition: 0.2s ease-in-out;
+    font-weight: 600;
+
+    & span {
+        font-size: 2rem;
+        user-select: none;
+    }
+}
+
+.redirect-primary {
+    background: #FF8500;
+    color: #0B090B;
+
+    &:hover {
+        background: #FF9E00;
+    }
+}
+
+.redirect-secondary {
+    background: #2D2A2F;
+    color: #f3f3f3;
+
+    &:hover {
+        background: #403c42;
+    }
+}

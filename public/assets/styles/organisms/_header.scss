@@ -1,0 +1,99 @@
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(11, 9, 11, 0.8);
+    border-bottom: 1px solid rgba(243, 243, 243, 0.2);
+    backdrop-filter: blur(1px);
+    z-index: 100;
+
+    >.container {
+        max-width: 132rem;
+        margin: 0 auto;
+        padding: 1.6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & nav>ul {
+            display: flex;
+            gap: 3.2rem;
+            list-style: none;
+        }
+
+        & nav a {
+            font-weight: 400;
+            color: #f3f3f3;
+            opacity: 0.6;
+            text-decoration: none;
+
+            &.active {
+                font-weight: 600;
+                color: #f3f3f3;
+                opacity: 0.8;
+                text-decoration: underline;
+    
+                & span {
+                    opacity: 1;
+                }
+            }
+        }
+
+        & .logo {
+            width: 6.4rem;
+            height: 3.2rem;
+            background: #E59627;
+            border-radius: 1.6rem 0 1.6rem 0;
+            opacity: 0.8;
+        }
+
+        >.navigation-bar {
+            display: flex;
+            align-items: center;
+            gap: 6.4rem;
+        }
+
+        >.actions {
+            display: flex;
+            align-items: center;
+            gap: 3.2rem;
+
+            & a {
+                position: relative;
+                width: 3.2rem;
+                height: 3.2rem;
+
+                >span {
+                    position: absolute;
+                    font-size: 2.4rem;
+                    color: #F3F3F3;
+                    opacity: 0.4;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    user-select: none;
+                }
+            }
+
+            .user-profile {
+                position: relative;
+                width: 3.2rem;
+                height: 3.2rem;
+                background: rgba(243, 243, 243, 0.1);
+                border-radius: 100%;
+
+                >span {
+                    position: absolute;
+                    font-size: 2.4rem;
+                    color: #F3F3F3;
+                    opacity: 0.4;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    user-select: none;
+                }
+            }
+        }
+    }
+}

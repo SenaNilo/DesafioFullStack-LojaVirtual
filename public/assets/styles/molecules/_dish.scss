@@ -1,0 +1,16 @@
+.dish-item {
+    background: #181519;
+    border: 2px solid rgba(243, 243, 243, 0.2);
+    border-radius: 0.8rem;
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    cursor: pointer;
+
+    & .dish-price {
+        margin-top: auto;
+        display: flex;
+        gap: 0.4rem;
+    }
+}

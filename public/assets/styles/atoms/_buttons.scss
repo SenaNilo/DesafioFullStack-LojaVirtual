@@ -1,0 +1,98 @@
+.btn {
+    outline: none;
+    border: none;
+    background: none;
+    border-radius: 0.4rem;
+    padding: 0.8rem 1.6rem;
+    transition: background 0.5s;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #FF8500;
+    font-family: Kanit, Arial, Helvetica, sans-serif;
+    color: #0B090B;
+    font-weight: 600;
+    font-size: 2rem;
+    
+    &:hover {
+        background: #FF9E00;
+        color: #0B090B;
+    }
+}
+
+.button {
+    position: relative;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #FF8500;
+    text-decoration: none;
+    background-color: transparent;
+    border: 0.2rem solid #FF8500;
+    border-radius: 1rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 5rem;
+        height: 5rem;
+        background-color: #FF8500;
+        border-radius: inherit;
+        scale: 0;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        z-index: -1;
+    }
+
+    &:hover {
+        color: #f3f3f3;
+        scale: 1.1;
+        box-shadow: 0 0 2rem rgba(193, 163, 98, 0.4);
+
+        &::before {
+            scale: 2;
+        }
+    }
+
+    &:active {
+        scale: 1;
+    }
+}
+
+// .button-secondary {
+//     color: var(--c-primary);
+//     border: 0.2rem solid var(--c-brand-light);
+//     background-color: var(--c-brand-light);
+//     margin-right: 1rem;
+// }
+
+.icon-btn {
+    background: rgba(243, 243, 243, 0.1);
+    border: 2px solid rgba(243, 243, 243, 0.4);
+    border-radius: 0.4rem;
+    width: 4.8rem;
+    height: 4.8rem;
+    position: relative;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    &:hover { 
+        border-color: rgba(243, 243, 243, 0.6);
+
+        > span {     
+            color: rgba(243, 243, 243, 0.8);
+        }
+    }
+
+    &:active {  
+        background: rgba(243, 243, 243, 0.15);
+        border-color: rgba(243, 243, 243, 0.6);
+    }
+}

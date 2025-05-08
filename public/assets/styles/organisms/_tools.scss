@@ -1,0 +1,22 @@
+.tools {
+    margin-top: 6.4rem;
+
+    & .title {
+        text-align: center;
+        margin-bottom: 6.4rem;
+    }
+}
+
+.tools-list {
+    display: flex;
+    gap: 3.2rem;
+    width: 100%;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    list-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
