@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./assets/styles/style.css">
+    <!-- <link rel="stylesheet" href="./assets/oldStyles/style.css">
+    <link rel="stylesheet" href="./assets/oldStyles/header.css">
+    <link rel="stylesheet" href="./assets/oldStyles/form.css"> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,8 +28,17 @@
                 'GRAD' 0,
                 'opsz' 24
         }
+
+        #main {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0
+        }
     </style>
-    
+
     <script>
         localStorage.clear('token');
     </script>
@@ -37,22 +49,25 @@
         <aside class="img-login">
             <!-- Imagem -->
         </aside>
-        <article class="container" ng-controller="AuthController">
+        <article class="container login-container" ng-controller="AuthController">
             <h2 class="title">Login</h2>
+
             <form id="user-form" class="form form-validate" ng-submit="send()">
+
                 <div class="textInputWrapper input-group">
-                    <!-- <label class="label" for="user-name">Nome</label> -->
                     <input ng-model="user.username" ng-required="true" id="user-name" class="textInput input"
                         type="text" placeholder="Nome de usuário">
                 </div>
+
                 <div class="textInputWrapper input-group">
-                    <!-- <label class="label" for="user-password">Senha</label> -->
                     <input ng-model="user.password" ng-required="true" id="user-password" class="textInput input"
                         type="password" placeholder="Senha">
                 </div>
+
                 <div class="btn-group">
                     <button class="button" type="submit">Enviar</button>
                 </div>
+
             </form>
         </article>
     </main>

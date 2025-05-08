@@ -125,7 +125,7 @@ article.container h2 {
     border-bottom: none;
     border-right: none;
 
-    &:-webkit-autofill{
+    &:-webkit-autofill {
         box-shadow: 0 0 0px 1000px #252525 inset !important;
         -webkit-text-fill-color: #e8e8e8 !important;
     }

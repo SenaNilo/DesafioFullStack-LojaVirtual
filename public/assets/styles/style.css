@@ -83,6 +83,16 @@
   align-items: center;
 }
 
+.login-container {
+  width: 100%;
+  padding: 0 3.3rem;
+  background-color: #0B090B;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .btn {
   outline: none;
   border: none;
@@ -627,6 +637,29 @@
 }
 .tools-list::-webkit-scrollbar {
   display: none;
+}
+
+.img-login {
+  background: url("../img/menuLogin.jpg");
+  background-size: cover;
+  width: 90%;
+}
+
+.login-container .title {
+  font-weight: 700;
+  font-size: 3.5rem;
+  position: relative;
+  font-family: Kanit, Arial, Helvetica, sans-serif;
+}
+.login-container .title:before {
+  content: "";
+  position: absolute;
+  border-bottom: 0.4rem solid #FF8500;
+  border-radius: 1rem;
+  width: 10rem;
+  transform: translateY(0.3rem);
+  left: 0;
+  bottom: 0;
 }
 
 .dish-list {

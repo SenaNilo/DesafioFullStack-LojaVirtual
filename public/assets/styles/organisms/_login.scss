@@ -1,0 +1,23 @@
+.img-login {
+    background: url('../img/menuLogin.jpg');
+    background-size: cover;
+    width: 90%;
+}
+
+.login-container .title {
+    font-weight: 700;
+    font-size: 3.5rem;
+    position: relative;
+    font-family: Kanit, Arial, Helvetica, sans-serif;
+
+    &:before {
+        content: "";
+        position: absolute;
+        border-bottom: 0.4rem solid #FF8500;
+        border-radius: 1rem;
+        width: 10rem;
+        transform: translateY(0.3rem);
+        left: 0;
+        bottom: 0;
+    }
+}

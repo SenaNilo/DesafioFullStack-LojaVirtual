@@ -29,3 +29,15 @@
     justify-content: center;
     align-items: center;
 }
+
+.login-container {
+    width: 100%;
+    padding: 0 3.3rem;
+    
+    background-color: #0B090B;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
