@@ -77,7 +77,7 @@ a {
   margin: 0;
   padding: 0;
   display: flex;
-  background: url("../img/itemBkg.jpg");
+  background: url("../img/item-bkg.webp");
   background-size: cover;
   background-position: center;
 }
@@ -598,7 +598,7 @@ a {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(11, 9, 11, 0) 72.6%, #0B090B 100%), url("../img/texture.jpg") #d3d3d3 50%/cover no-repeat;
+  background: linear-gradient(180deg, rgba(11, 9, 11, 0) 72.6%, #0B090B 100%), url("../img/hero-banner-background.webp") #d3d3d3 50%/cover no-repeat;
   opacity: 0.2;
 }
 #hero .container {
@@ -656,7 +656,7 @@ a {
 }
 
 .img-login {
-  background: url("../img/menuLogin.jpg");
+  background: url("../img/menu-login.webp");
   background-size: cover;
   width: 90%;
 }
